@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
@@ -21,6 +22,7 @@ private void Start() {
     bookSpot = GetComponentInParent<BookSpot>();
     bookSpot.currentBook = this;
     bookSpot.isAvailable = false;
+        isPickedUp = false;
     uiController = FindObjectOfType<UIController>();
     
     if(bookName=="")
@@ -28,30 +30,9 @@ private void Start() {
         bookName = "Solo Leveling Chapter " + Random.Range( 1,500);
     }
 }
-/*
-private void OnTriggerEnter(Collider other)
-{
-    if (!isPickedUp && other.gameObject.CompareTag("Customer"))
-    {
-        customer = other.gameObject.GetComponent<Customer>();
-        if (customer != null && customer.PickUpObject(this, customer.pickupRange))
-        {
-            Debug.Log("IS THIS BEING USED?");
-            isPickedUp = true;
-            pickedUpObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("Could not pick up object: customer is null, already has an object, or is out of range.");
-        }
-    }
-}
-    /*public void Reset()
-    {
-        isPickedUp = false;
-        customer = null;
-        pickedUpObject.SetActive(true);
-    }*/
+   /* Need something to pick up book here
+    * when right clicked player goes over and picks up, then this book nerds out, copy the is being carried i guess
+     */
 
     public void SetIsBeingCarried(bool isBeingCarried)
     {
