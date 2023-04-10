@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1449216689442452081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000036455150039409}
+  - component: {fileID: 1485273400159046755}
+  - component: {fileID: 6722570182701324929}
+  - component: {fileID: 2833622554279524146}
+  m_Layer: 0
+  m_Name: --GameController--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2000036455150039409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449216689442452081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.000030517578, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1485273400159046755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449216689442452081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030cfb391e6f5c740a04abb7d6ae5373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCustomers: 8
+  currentCustomerCount: 0
+  UIController: {fileID: 6722570182701324929}
+  books: 3
+  currentGold: 0
+  CustomerSpawnTime: 8
+  CustomerSpawnTimeMin: 8
+  CustomerSpawnTimeMax: 15
+  Customer: {fileID: 2647694406141899701, guid: 46075f5df58bd884b8e59a3394c59b4e, type: 3}
+  Door: {fileID: 0}
+  employeeDoor: {fileID: 0}
+  storage: {fileID: 0}
+  worker: {fileID: 325053106476651032, guid: 31bf16b51d1eee847a189323936390d3, type: 3}
+  currentWorker: {fileID: 0}
+  restockInProgress: 0
+  availableBookSpots: []
+  cashierNeeded: 0
+  restockNeeded: 0
+--- !u!114 &6722570182701324929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449216689442452081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981dc3784ac6b244f89c427dc519199c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGold: {fileID: 0}
+  currentTitle: {fileID: 0}
+  currentCost: {fileID: 0}
+  bookStatusWindow: {fileID: 0}
+  storageStatusWindow: {fileID: 0}
+  storeStatusWindow: {fileID: 0}
+  storePrices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventoryAmount:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventoryStatusWindow: {fileID: 0}
+  creationStatusWindow: {fileID: 0}
+  storage: {fileID: 0}
+--- !u!114 &2833622554279524146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449216689442452081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d8c56eed6252840a3be4630c161789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
+  uiController: {fileID: 0}
+  inventory: 
