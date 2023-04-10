@@ -1412,9 +1412,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173675142581034945}
+  - component: {fileID: -1023465917210803272}
+  - component: {fileID: 7885247870473129486}
   m_Layer: 0
   m_Name: Top Notch BookShelf
-  m_TagString: Untagged
+  m_TagString: Bookshelf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1439,6 +1441,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1023465917210803272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558747522602272197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36fa8edcf3bab444ad1fd5ea63eb555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookSpots:
+  - {fileID: 387323453920687068}
+  - {fileID: 4094963728803911872}
+  - {fileID: 8160118441825577541}
+  - {fileID: 8959300024133732617}
+  - {fileID: 931620590504099275}
+  - {fileID: 7009459225018820167}
+  - {fileID: 7272084219145710700}
+  - {fileID: 5528379192407205440}
+  - {fileID: 456713425654638786}
+  - {fileID: 1841445484196923463}
+  - {fileID: 9092029705993914720}
+  - {fileID: 840870421932273927}
+  - {fileID: 5242392725637515020}
+  - {fileID: 8262396289794960408}
+  - {fileID: 7851014505768718000}
+  - {fileID: 3174077250882041138}
+  - {fileID: 8467253793473272183}
+  - {fileID: 6642930716488135769}
+  - {fileID: 7564414953316269377}
+  - {fileID: 8888529528075738099}
+  - {fileID: 3248088939712194540}
+  - {fileID: 5215001217683652165}
+  - {fileID: 7472559509920376868}
+  - {fileID: 8984233367808371177}
+  - {fileID: 5440564356123326871}
+  - {fileID: 5507196153519895756}
+  - {fileID: 8618900831692214392}
+  - {fileID: 4550114513182044268}
+  - {fileID: 5962483825985346181}
+  - {fileID: 4674142059982400257}
+  - {fileID: 1381012006981002708}
+  - {fileID: 27725341294789822}
+  - {fileID: 8785640226817330956}
+--- !u!65 &7885247870473129486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558747522602272197}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.2, z: 2}
+  m_Center: {x: -0.5, y: 1.2, z: 0}
 --- !u!1 &5982652606847369107
 GameObject:
   m_ObjectHideFlags: 0

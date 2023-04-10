@@ -23,12 +23,6 @@ public class BookCreation : MonoBehaviour
         UpdateButtonInteractability(0);
     }
 
-    // Update is called once per frame
-    void OnMouseDown()
-    {
-        uiController.CloseWindows();
-        uiController.OpenCreationStatus();
-    }
 public void NextPage()
 {
     int currentIndex = bookPages.IndexOf(currentBookPage);

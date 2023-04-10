@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6547425648836434959}
+  - component: {fileID: 4006764307847380346}
+  - component: {fileID: -2912208356080931206}
   m_Layer: 0
   m_Name: Crappy Bookshelf
-  m_TagString: Untagged
+  m_TagString: Bookshelf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,6 +36,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4006764307847380346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470524811030749978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36fa8edcf3bab444ad1fd5ea63eb555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookSpots:
+  - {fileID: 2079889047201499710}
+  - {fileID: 9085815973352334653}
+  - {fileID: 1891274119286384957}
+  - {fileID: 955814125604098646}
+  - {fileID: 6179769341721726842}
+--- !u!65 &-2912208356080931206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470524811030749978}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1374227907228685995
 GameObject:
   m_ObjectHideFlags: 0

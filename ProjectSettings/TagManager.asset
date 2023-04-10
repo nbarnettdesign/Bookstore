@@ -12,6 +12,8 @@ TagManager:
   - StorageStatus
   - Ground
   - CheckoutDesk
+  - Bookshelf
+  - BookCreation
   layers:
   - Default
   - TransparentFX
