@@ -7,6 +7,7 @@ using static Worker;
 public class PlayerController : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
+    private PickUpObject targetPickupObject;
     public UIController uiController;
     public Store store;
     public BookCreation bookCreation;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool hasbook;
     public bool workingAtStorage;
     public bool workingAtBookshelf;
+    public bool takingABook;
     public bool workingAtCreation;
     public bool atCreation;
     BookSpot availableBookSpot;
@@ -193,6 +195,13 @@ public class PlayerController : MonoBehaviour
                 atCreation = true;
             }
         }
+        else if (takingABook == true)
+        {
+            if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
+            {
+                TakeBookOffShelf();
+            }
+        }
     }
 
     public void WorkAtCheckoutDesk()
@@ -228,11 +237,16 @@ public class PlayerController : MonoBehaviour
     public void BookPointPicked(BookSpot bookSpot)
     {
         if (bookSpot.isAvailable)
-            {
-                availableBookSpot = bookSpot;
-                navMeshAgent.SetDestination(availableBookSpot.transform.position);
-                workingAtBookshelf = true;
-            }
+        {
+            availableBookSpot = bookSpot;
+            navMeshAgent.SetDestination(availableBookSpot.transform.position);
+            workingAtBookshelf = true;
+        } else if(bookSpot.isAvailable == false && carriedBookNames.Count < howManyBooksCanCarry)
+        {
+            workingAtBookshelf = true;
+            navMeshAgent.SetDestination(availableBookSpot.transform.position);
+            targetPickupObject = bookSpot.currentBook;
+        }
     }
 
     public void StockABookshelf()
@@ -263,7 +277,17 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("No available BookSpot found on the bookcase.");
             }
         }
-        
+    }
+    public void TakeBookOffShelf()
+    {
+        /*
+        Check if target book is not null
+        if not, then take info from target book, add to list (Already made sure that you have room)
+        remove book from shelf
+        make shelf available again
+
+        ADD TO EVERYWHERE ELSE THAT IF YOU CLICK THEN TARGET BOOK = NULL
+        */
     }
     public void WorkAtStorage()
     {
