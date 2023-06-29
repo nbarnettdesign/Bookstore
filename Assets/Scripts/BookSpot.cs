@@ -13,18 +13,13 @@ public class BookSpot : MonoBehaviour
         bookGhost.SetActive(false);
         hovering = false;
     }
-    void OnMouseOver() {
-        if(isAvailable == true)
-        {
-            bookGhost.SetActive(true);
-        }
-        
+    void OnMouseOver() 
+    {    
+        bookGhost.SetActive(true);      
     }
 
-    private void OnMouseExit() {
-        if(isAvailable == true)
-        {
-            bookGhost.SetActive(false);
-        }
+    private void OnMouseExit() 
+    {
+        bookGhost.SetActive(false);
     }
 }
