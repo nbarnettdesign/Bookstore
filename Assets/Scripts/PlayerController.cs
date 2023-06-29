@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public bool workingAtCreation;
     public bool atCreation;
     BookSpot availableBookSpot;
+    public int howManyBooksCanCarry;
+    public List<string> carriedBookNames;
+    public List<int> carriedBookPrices;
+    public List<GameObject> carriedBookPrefabs;
 
 
     void Start()
@@ -238,15 +242,18 @@ public class PlayerController : MonoBehaviour
             if (availableBookSpot != null)
             {
                 FaceTarget(availableBookSpot.transform.position);
-                GameObject newBook = Instantiate(carriedBookPrefab, availableBookSpot.transform.position, Quaternion.identity, availableBookSpot.transform);
+                GameObject newBook = Instantiate(carriedBookPrefabs[0], availableBookSpot.transform.position, Quaternion.identity, availableBookSpot.transform);
                 newBook.transform.localRotation = Quaternion.Euler(0, 90, 0);
                 newBook.transform.localPosition = new Vector3(0, 0.23f, 0);
-                newBook.GetComponent<PickUpObject>().bookName = carriedBookName;
-                newBook.GetComponent<PickUpObject>().price = carriedBookPrice;
-                carriedBookName = null;
-                carriedBookPrice = 0;
-                carriedBookPrefab = null;
-                hasbook = false;
+                newBook.GetComponent<PickUpObject>().bookName = carriedBookNames[0];
+                newBook.GetComponent<PickUpObject>().price = carriedBookPrices[0];
+                carriedBookNames.RemoveAt(0);
+                carriedBookPrices.RemoveAt(0);
+                carriedBookPrefabs.RemoveAt(0);
+                if(carriedBookNames.Count == 0)
+                {
+                    hasbook = false;
+                } 
                 workingAtBookshelf = false;
                 availableBookSpot = null;
                 // ... do something with the available BookSpot ...
@@ -263,19 +270,19 @@ public class PlayerController : MonoBehaviour
         FaceTarget(storage.transform.position);
         if (storage.GetComponent<Storage>().bookList.Count > 0)
         {
-
-            if (hasbook == false)
+            if(carriedBookNames.Count < howManyBooksCanCarry)
             {
-                carriedBookName = storage.GetComponent<Storage>().bookList[0].name;
-                carriedBookPrice = storage.GetComponent<Storage>().bookList[0].value;
-                carriedBookPrefab = storage.GetComponent<Storage>().bookList[0].prefab;
+                carriedBookNames.Add(storage.GetComponent<Storage>().bookList[0].name);
+                carriedBookPrices.Add(storage.GetComponent<Storage>().bookList[0].value);
+                carriedBookPrefabs.Add(storage.GetComponent<Storage>().bookList[0].prefab);
                 storage.GetComponent<Storage>().bookList.RemoveAt(0);
                 storage.GetComponent<Storage>().booksInStorage--;
                 uiController.CloseStorageStatus();
                 storage.GetComponent<Storage>().BooksOnTop();
                 hasbook = true;
             }
-            else if (hasbook == true)
+            /*  @@@ bellow is for putting books back into storage, need a different clickable to do that (Maybe Button in Storage)
+            else if (carriedBookNames.Count >= howManyBooksCanCarry)
             {
                 storage.AddBook(carriedBookName, carriedBookPrice, carriedBookPrefab);
                 storage.GetComponent<Storage>().booksInStorage++;
@@ -284,6 +291,7 @@ public class PlayerController : MonoBehaviour
                 carriedBookPrefab = null;
                 hasbook = false;
             }
+            */
             workingAtStorage = false;
             navMeshAgent.SetDestination(this.transform.position);
         }
@@ -295,5 +303,12 @@ public class PlayerController : MonoBehaviour
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);  
+    }
+
+    public void AddBookToList(string bookName, int bookPrice, GameObject bookPrefab)
+    {
+        carriedBookNames.Add(bookName);
+        carriedBookPrices.Add(bookPrice);
+        carriedBookPrefabs.Add(bookPrefab);
     }
 }
