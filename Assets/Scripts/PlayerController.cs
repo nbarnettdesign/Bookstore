@@ -124,6 +124,24 @@ public class PlayerController : MonoBehaviour
                     workingAtStorage = false;
                     workingAtCreation = false;
                 }
+                else if (hit.collider.CompareTag("BookPoint"))
+                {
+                    BookPointPicked(hit.collider.GetComponent<BookSpot>());
+                    if (workingAtCheckout == true)
+                    {
+                        workingAtCheckout = false;
+                        cashRegister.cashierAssigned = false;
+                        cashRegister.cashierAtTill = false;
+                        atCheckout = false;
+                    }
+                    if (atCreation)
+                    {
+                        uiController.CloseCreationStatus();
+                        atCreation = false;
+                    }
+                    workingAtStorage = false;
+                    workingAtCreation = false;
+                }
                 else if (hit.collider.CompareTag("BookCreation"))
                 {
                     workingAtCreation = true;
@@ -202,8 +220,15 @@ public class PlayerController : MonoBehaviour
         {
             navMeshAgent.SetDestination(shelf.transform.position);
         }
-
-        
+    }
+    public void BookPointPicked(BookSpot bookSpot)
+    {
+        if (bookSpot.isAvailable)
+            {
+                availableBookSpot = bookSpot;
+                navMeshAgent.SetDestination(availableBookSpot.transform.position);
+                workingAtBookshelf = true;
+            }
     }
 
     public void StockABookshelf()
