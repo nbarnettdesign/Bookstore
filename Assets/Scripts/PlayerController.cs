@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
                     workingAtBookshelf = false;
                     workingAtStorage = false;
                     workingAtCreation = false;
+                    takingABook = false;
                 }
                 else if (hit.collider.CompareTag("CheckoutDesk"))
                 {
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
                     workingAtBookshelf = false;
                     workingAtStorage = false;
                     workingAtCreation = false;
+                    takingABook = false;
 
                 }
                 else if (hit.collider.CompareTag("Storage"))
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviour
                     }
                     workingAtBookshelf = false;
                     workingAtCreation = false;
+                    takingABook = false;
                 }
                 else if (hit.collider.CompareTag("Bookshelf"))
                 {
@@ -129,6 +132,7 @@ public class PlayerController : MonoBehaviour
                     }
                     workingAtStorage = false;
                     workingAtCreation = false;
+                    takingABook = false;
                 }
                 else if (hit.collider.CompareTag("BookPoint"))
                 {
@@ -147,6 +151,7 @@ public class PlayerController : MonoBehaviour
                     }
                     workingAtStorage = false;
                     workingAtCreation = false;
+                    
                 }
                 else if (hit.collider.CompareTag("BookCreation"))
                 {
@@ -241,11 +246,13 @@ public class PlayerController : MonoBehaviour
             availableBookSpot = bookSpot;
             navMeshAgent.SetDestination(availableBookSpot.transform.position);
             workingAtBookshelf = true;
+            takingABook = false;
         } else if(bookSpot.isAvailable == false && carriedBookNames.Count < howManyBooksCanCarry)
         {
-            workingAtBookshelf = true;
-            navMeshAgent.SetDestination(availableBookSpot.transform.position);
+            workingAtBookshelf = false;
+            navMeshAgent.SetDestination(bookSpot.transform.position);
             targetPickupObject = bookSpot.currentBook;
+            takingABook = true;
         }
     }
 
@@ -280,6 +287,17 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeBookOffShelf()
     {
+        if(targetPickupObject != null)
+        {
+            carriedBookNames.Add(targetPickupObject.bookName);
+            targetPickupObject.bookName = null;
+            carriedBookPrices.Add(targetPickupObject.price);
+            targetPickupObject.price = 0;
+            carriedBookPrefabs.Add(targetPickupObject.pickedUpObject);
+            Destroy(targetPickupObject.gameObject);
+            targetPickupObject.isAvailable = true;
+            takingABook = false;
+        }
         /*
         Check if target book is not null
         if not, then take info from target book, add to list (Already made sure that you have room)
