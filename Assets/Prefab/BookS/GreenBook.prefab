@@ -99,9 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 2
   pickedUpObject: {fileID: 726547640068714940}
+  prefab: {fileID: 726547640068714940}
   bookSpot: {fileID: 0}
   bookName: 
   isAvailable: 1
+  uiController: {fileID: 0}
   pickupRange: 2
 --- !u!65 &8535264435330873541
 BoxCollider:

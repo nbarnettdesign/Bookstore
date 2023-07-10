@@ -1130,7 +1130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325053106476651032, guid: 31bf16b51d1eee847a189323936390d3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1335203628568120741, guid: 31bf16b51d1eee847a189323936390d3, type: 3}
       propertyPath: m_WalkableMask

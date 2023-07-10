@@ -168,6 +168,7 @@ public class Worker : MonoBehaviour
                             else
                             {
                                 GameObject newBook = Instantiate(carriedBookPrefab, bookSpotFree.transform.position, Quaternion.identity, bookSpotFree.transform);
+                                newBook.GetComponent<PickUpObject>().prefab = carriedBookPrefab;
                                 newBook.transform.localRotation = Quaternion.Euler(0, 90, 0);
                                 newBook.transform.localPosition = new Vector3(0,0.23f,0);
                                 newBook.GetComponent<PickUpObject>().bookName = carriedBookName;

@@ -264,6 +264,7 @@ public class PlayerController : MonoBehaviour
             {
                 FaceTarget(availableBookSpot.transform.position);
                 GameObject newBook = Instantiate(carriedBookPrefabs[0], availableBookSpot.transform.position, Quaternion.identity, availableBookSpot.transform);
+                newBook.GetComponent<PickUpObject>().prefab = carriedBookPrefabs[0];
                 newBook.transform.localRotation = Quaternion.Euler(0, 90, 0);
                 newBook.transform.localPosition = new Vector3(0, 0.23f, 0);
                 newBook.GetComponent<PickUpObject>().bookName = carriedBookNames[0];
@@ -293,9 +294,10 @@ public class PlayerController : MonoBehaviour
             targetPickupObject.bookName = null;
             carriedBookPrices.Add(targetPickupObject.price);
             targetPickupObject.price = 0;
-            carriedBookPrefabs.Add(targetPickupObject.pickedUpObject);
+            carriedBookPrefabs.Add(targetPickupObject.prefab);
+            targetPickupObject.bookSpot.isAvailable = true;
             Destroy(targetPickupObject.gameObject);
-            targetPickupObject.isAvailable = true;
+            
             takingABook = false;
         }
         /*

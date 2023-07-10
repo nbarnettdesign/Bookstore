@@ -7,6 +7,7 @@ public class PickUpObject : MonoBehaviour
 {
     public int price = 10;
     public GameObject pickedUpObject;
+    public GameObject prefab;
     public BookSpot bookSpot;
     public string bookName;
     private bool isPickedUp = false;
