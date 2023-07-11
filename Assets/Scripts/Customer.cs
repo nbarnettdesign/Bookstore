@@ -83,7 +83,11 @@ public class Customer : MonoBehaviour
                         targetPickupObject = availablePickupObjects[currentPickupIndex];
                         //Debug.Log("SET STATE TO: WALKING");
                         currentState = CustomerState.Walking;
-                        navMeshAgent.SetDestination(targetPickupObject.transform.position);
+                        if(targetPickupObject != null)
+                        {
+                            navMeshAgent.SetDestination(targetPickupObject.transform.position);
+                        }
+                        
                         //Debug.Log("Walking to "+ targetPickupObject);
                         targetPickupObject.isAvailable = false;
                     }else currentState = CustomerState.Exiting;
@@ -142,8 +146,10 @@ public class Customer : MonoBehaviour
                 }
                 else
                 {
-                    FaceTarget(targetPickupObject.transform.position);
-                    lookAtItemTimer += Time.deltaTime;
+                    if(targetPickupObject != null){
+                        FaceTarget(targetPickupObject.transform.position);
+                        lookAtItemTimer += Time.deltaTime;
+                    } else currentState = CustomerState.Idle;
                 }
                 break;
             case CustomerState.PickingUpItem:
@@ -171,7 +177,7 @@ public class Customer : MonoBehaviour
                  navMeshAgent.SetDestination(exitPoint);
                 if (Vector3.Distance(transform.position, exitPoint)  <= 3f && !hasExited) 
                     {
-                        Debug.Log("GOODBYE FOREVER");
+                        //Debug.Log("GOODBYE FOREVER");
                         hasExited = true;
                         gameController.currentCustomerCount --;
                         gameController.RestockShelves();

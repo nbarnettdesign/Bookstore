@@ -127,6 +127,7 @@ public class BookCreationPage : MonoBehaviour
             {
                 storage.AddBook(newname, price, prefab);
                 storage.booksInStorage++;
+                gameController.RestockShelves();
             }
 
         UpdatePage();

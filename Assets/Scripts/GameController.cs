@@ -87,8 +87,8 @@ private float CustomerSpawnTimer;
         {
             if(currentCustomerCount<books)
             {
-                if(currentCustomerCount<books)
-                {
+                /*if(currentCustomerCount<books)
+                {*/
                     if (CustomerSpawnTimer<=CustomerSpawnTime)
                     {
                         CustomerSpawnTimer+=Time.deltaTime;
@@ -96,7 +96,7 @@ private float CustomerSpawnTimer;
                     else {
                         SpawnCustomer();
                     }
-                }
+                //}
             }
         }
     }

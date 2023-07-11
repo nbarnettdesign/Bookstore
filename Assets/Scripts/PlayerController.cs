@@ -272,6 +272,7 @@ public class PlayerController : MonoBehaviour
                 carriedBookNames.RemoveAt(0);
                 carriedBookPrices.RemoveAt(0);
                 carriedBookPrefabs.RemoveAt(0);
+                gameController.books++;
                 if(carriedBookNames.Count == 0)
                 {
                     hasbook = false;
@@ -297,6 +298,8 @@ public class PlayerController : MonoBehaviour
             carriedBookPrefabs.Add(targetPickupObject.prefab);
             targetPickupObject.bookSpot.isAvailable = true;
             Destroy(targetPickupObject.gameObject);
+            if(carriedBookNames.Count>0){hasbook = true;}
+            gameController.books--;
             
             takingABook = false;
         }
