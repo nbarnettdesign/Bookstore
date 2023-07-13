@@ -5,29 +5,29 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638167307415624228
-    m_Hash: 3960686133
+      ticks: 638248017656173174
+    m_Hash: 3099962361
   m_LockFileStatus:
     m_FilePath: F:/Game Projects/Bookshop/Bookstore/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638167307415664346
-    m_Hash: 3437625954
+      ticks: 638248017657143683
+    m_Hash: 2270976673
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: F:/Game Projects/Bookshop/Bookstore/Packages
-m_EditorVersion: 2022.2.14f1 (b2c9b1ac6cc0)
+m_EditorVersion: 2022.3.4f1 (35713cd46cd7)
 m_ResolvedPackages:
-- packageId: com.unity.ai.navigation@1.1.1
+- packageId: com.unity.ai.navigation@1.1.4
   testable: 0
   isDirectDependency: 1
-  version: 1.1.1
+  version: 1.1.4
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ai.navigation@1.1.1
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ai.navigation@1.1.4
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -36,7 +36,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: assets
   description: High-level NavMesh components for building and using NavMeshes at
     runtime and at edit time.
   status: 0
@@ -50,9 +50,12 @@ m_ResolvedPackages:
     - 1.1.0-pre.1
     - 1.1.0-pre.2
     - 1.1.1
+    - 1.1.3
+    - 1.1.4
+    - 2.0.0-pre.3
     compatible:
-    - 1.1.1
-    recommended: 1.1.1
+    - 1.1.4
+    recommended: 1.1.4
     deprecated: []
   dependencies:
   - name: com.unity.modules.ai
@@ -69,30 +72,195 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638023206030000000
-  documentationUrl: 
+  datePublishedTicks: 638224218100000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
-    revision: 68f64fce84ec1c6721cae1231d5cf4003494eb08
+    revision: 3e8d494400ccac6cbd90ee1b474470f4b1299bfa
     path: 
   unityLifecycle:
-    version: 1.1.1
+    version: 1.1.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.collab-proxy@2.0.1
+- packageId: com.unity.cinemachine@2.9.7
   testable: 0
   isDirectDependency: 1
-  version: 2.0.1
+  version: 2.9.7
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.collab-proxy@2.0.1
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.cinemachine@2.9.7
+  assetPath: Packages/com.unity.cinemachine
+  name: com.unity.cinemachine
+  displayName: Cinemachine
+  author:
+    name: 
+    email: 
+    url: 
+  category: cinematography
+  type: asset
+  description: "Smart camera tools for passionate creators. \n\nNew starting from
+    2.7.1: Are you looking for the Cinemachine menu? It has moved to the GameObject
+    menu.\n\nIMPORTANT NOTE: If you are upgrading from the legacy Asset Store version
+    of Cinemachine, delete the Cinemachine asset from your project BEFORE installing
+    this version from the Package Manager."
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 2.1.11-beta.1
+    - 2.1.12
+    - 2.1.13
+    - 2.2.0
+    - 2.2.7
+    - 2.2.8
+    - 2.2.9
+    - 2.2.10-preview.3
+    - 2.2.10-preview.4
+    - 2.3.1
+    - 2.3.3
+    - 2.3.4
+    - 2.3.5-preview.3
+    - 2.4.0-preview.3
+    - 2.4.0-preview.4
+    - 2.4.0-preview.6
+    - 2.4.0-preview.7
+    - 2.4.0-preview.8
+    - 2.4.0-preview.9
+    - 2.4.0-preview.10
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0-preview.2
+    - 2.6.0-preview.3
+    - 2.6.0-preview.5
+    - 2.6.0-preview.8
+    - 2.6.0
+    - 2.6.1-preview.6
+    - 2.6.1
+    - 2.6.2-preview.1
+    - 2.6.2
+    - 2.6.3-preview.2
+    - 2.6.3
+    - 2.6.4
+    - 2.6.5
+    - 2.6.9
+    - 2.6.10
+    - 2.6.11
+    - 2.6.14
+    - 2.6.15
+    - 2.6.17
+    - 2.7.1
+    - 2.7.2
+    - 2.7.3
+    - 2.7.4
+    - 2.7.5
+    - 2.7.8
+    - 2.7.9
+    - 2.8.0-exp.1
+    - 2.8.0-exp.2
+    - 2.8.0-pre.1
+    - 2.8.0
+    - 2.8.1
+    - 2.8.2
+    - 2.8.3
+    - 2.8.4
+    - 2.8.6
+    - 2.8.9
+    - 2.9.0-pre.1
+    - 2.9.0-pre.6
+    - 2.9.1
+    - 2.9.2
+    - 2.9.4
+    - 2.9.5
+    - 2.9.7
+    - 3.0.0-pre.3
+    - 3.0.0-pre.4
+    - 3.0.0-pre.5
+    - 3.0.0-pre.6
+    - 3.0.0-pre.7
+    compatible:
+    - 2.9.5
+    - 2.9.7
+    - 3.0.0-pre.3
+    - 3.0.0-pre.4
+    - 3.0.0-pre.5
+    - 3.0.0-pre.6
+    - 3.0.0-pre.7
+    recommended: 2.9.7
+    deprecated: []
+  dependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  resolvedDependencies:
+  - name: com.unity.test-framework
+    version: 1.1.33
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - camera
+  - follow
+  - rig
+  - fps
+  - cinematography
+  - aim
+  - orbit
+  - cutscene
+  - cinematic
+  - collision
+  - freelook
+  - cinemachine
+  - compose
+  - composition
+  - dolly
+  - track
+  - clearshot
+  - noise
+  - framing
+  - handheld
+  - lens
+  - impulse
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638191355130000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.cinemachine@2.9/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
+    revision: 46485ca80113434766f2b256525bb98def548fb9
+    path: 
+  unityLifecycle:
+    version: 2.9.5
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.unity.collab-proxy@2.0.5
+  testable: 0
+  isDirectDependency: 1
+  version: 2.0.5
+  source: 1
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.collab-proxy@2.0.5
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -101,10 +269,10 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Editor
-  type: asset
-  description: The package gives you the ability to use the Unity Version Control
-    in the Unity editor. To use Unity Version Control, a subscription is required.
-    Learn more about how you can get started for free by visiting plasticscm.com.
+  type: assets
+  description: The package gives you the ability to use Unity Version Control in
+    the Unity editor. To use Unity Version Control, a subscription is required. Learn
+    more about how you can get started for free by visiting plasticscm.com.
   status: 0
   errors: []
   versions:
@@ -171,16 +339,17 @@ m_ResolvedPackages:
     - 2.0.0
     - 2.0.1
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 2.0.1
-    - 2.0.3
+    - 2.0.5
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    recommended: 2.0.3
+    recommended: 2.0.5
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -207,18 +376,18 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638125977010000000
+  datePublishedTicks: 638218079810000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 8740b4e630f877841cfa8e22ddfbcb237b70a9e6
+    revision: 7f68049e8cae5b51ad0d17cc01b8c6e802bf3866
     path: 
   unityLifecycle:
-    version: 2.0.1
+    version: 2.0.5
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -270,7 +439,7 @@ m_ResolvedPackages:
     version: default
   resolvedDependencies:
   - name: com.unity.ide.visualstudio
-    version: 2.0.17
+    version: 2.0.18
   - name: com.unity.test-framework
     version: 1.1.33
   - name: com.unity.ext.nunit
@@ -280,7 +449,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.ide.rider
-    version: 3.0.18
+    version: 3.0.24
   - name: com.unity.ide.vscode
     version: 1.2.5
   - name: com.unity.editorcoroutines
@@ -288,7 +457,7 @@ m_ResolvedPackages:
   - name: com.unity.performance.profile-analyzer
     version: 1.2.2
   - name: com.unity.testtools.codecoverage
-    version: 1.2.2
+    version: 1.2.4
   - name: com.unity.settings-manager
     version: 2.0.1
   keywords: []
@@ -300,7 +469,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
@@ -318,12 +487,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.inputsystem@1.5.1
+- packageId: com.unity.inputsystem@1.6.1
   testable: 0
   isDirectDependency: 1
-  version: 1.5.1
+  version: 1.6.1
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.inputsystem@1.5.1
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.inputsystem@1.6.1
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -377,9 +546,10 @@ m_ResolvedPackages:
     - 1.4.4
     - 1.5.0
     - 1.5.1
+    - 1.6.1
     compatible:
-    - 1.5.1
-    recommended: 1.5.1
+    - 1.6.1
+    recommended: 1.6.1
     deprecated: []
   dependencies:
   - name: com.unity.modules.uielements
@@ -410,18 +580,18 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638152610980000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html
+  datePublishedTicks: 638207453750000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/InputSystem.git
-    revision: 3062b2c3402b5f7f435d79acbd6011a621bfeb3e
+    revision: 6e8cbe050db664506f3400e4d0735f9e4b604915
     path: 
   unityLifecycle:
-    version: 1.5.1
+    version: 1.6.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -587,7 +757,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637547111200000000
   documentationUrl: 
@@ -694,6 +864,7 @@ m_ResolvedPackages:
     - 1.6.2
     - 1.6.3
     - 1.6.4
+    - 1.6.5
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     - 1.7.0
@@ -701,15 +872,21 @@ m_ResolvedPackages:
     - 1.7.2
     - 1.7.3
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
+    - 1.8.3
+    - 1.8.4
     compatible:
     - 1.7.4
+    - 1.7.5
     - 1.8.0
     - 1.8.1
     - 1.8.2
-    recommended: 1.7.4
+    - 1.8.3
+    - 1.8.4
+    recommended: 1.7.5
     deprecated: []
   dependencies:
   - name: com.unity.modules.director
@@ -743,7 +920,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638143790870000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.timeline@1.7/manual/index.html
@@ -785,6 +962,7 @@ m_ResolvedPackages:
   versions:
     all:
     - 1.0.0
+    - 3.0.0-exp.1
     compatible:
     - 1.0.0
     recommended: 1.0.0
@@ -2825,12 +3003,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.ide.visualstudio@2.0.17
+- packageId: com.unity.ide.visualstudio@2.0.18
   testable: 0
   isDirectDependency: 0
-  version: 2.0.17
+  version: 2.0.18
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ide.visualstudio@2.0.17
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ide.visualstudio@2.0.18
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -2867,9 +3045,10 @@ m_ResolvedPackages:
     - 2.0.15
     - 2.0.16
     - 2.0.17
+    - 2.0.18
     compatible:
-    - 2.0.17
-    recommended: 2.0.17
+    - 2.0.18
+    recommended: 2.0.18
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -2892,30 +3071,30 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638059987360000000
+  datePublishedTicks: 638173205920000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-    revision: 1f126893bfb18ea9661fb15771613e841467073c
+    revision: 9d3c07127cbe1916b8abbfd18f71fb8d9df8008c
     path: 
   unityLifecycle:
-    version: 2.0.17
+    version: 2.0.18
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.ide.rider@3.0.18
+- packageId: com.unity.ide.rider@3.0.24
   testable: 0
   isDirectDependency: 0
-  version: 3.0.18
+  version: 3.0.24
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ide.rider@3.0.18
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.ide.rider@3.0.24
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -2924,7 +3103,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: assets
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -2966,9 +3145,13 @@ m_ResolvedPackages:
     - 3.0.16
     - 3.0.17
     - 3.0.18
+    - 3.0.20
+    - 3.0.21
+    - 3.0.22
+    - 3.0.24
     compatible:
-    - 3.0.18
-    recommended: 3.0.18
+    - 3.0.24
+    recommended: 3.0.24
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -2985,18 +3168,18 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638088746970000000
+  datePublishedTicks: 638221653400000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: b40b39e6834c2915637f431d002d1f3dd8ec9ce5
+    revision: f5decc642e3618ce1c6827d47318260e61d64714
     path: 
   unityLifecycle:
-    version: 3.0.18
+    version: 3.0.24
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -3189,7 +3372,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 638108624620000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.performance.profile-analyzer@1.2/manual/index.html
@@ -3266,6 +3449,9 @@ m_ResolvedPackages:
     - 1.3.2
     - 1.3.3
     - 1.3.4
+    - 1.3.5
+    - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -3277,6 +3463,9 @@ m_ResolvedPackages:
     - 1.3.2
     - 1.3.3
     - 1.3.4
+    - 1.3.5
+    - 1.3.7
+    - 1.3.8
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -3308,7 +3497,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637938212700000000
   documentationUrl: 
@@ -3326,12 +3515,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.testtools.codecoverage@1.2.2
+- packageId: com.unity.testtools.codecoverage@1.2.4
   testable: 0
   isDirectDependency: 0
-  version: 1.2.2
+  version: 1.2.4
   source: 1
-  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2
+  resolvedPath: F:\Game Projects\Bookshop\Bookstore\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4
   assetPath: Packages/com.unity.testtools.codecoverage
   name: com.unity.testtools.codecoverage
   displayName: Code Coverage
@@ -3377,9 +3566,11 @@ m_ResolvedPackages:
     - 1.2.0
     - 1.2.1
     - 1.2.2
+    - 1.2.3
+    - 1.2.4
     compatible:
-    - 1.2.2
-    recommended: 1.2.2
+    - 1.2.4
+    recommended: 1.2.4
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3410,18 +3601,18 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638047147810000000
-  documentationUrl: 
+  datePublishedTicks: 638212235100000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.2/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.testtools.codecoverage.git
-    revision: 4178e047a15e206f715d23af69b02acd367bb000
+    revision: a7dd0751db55cd55e3b336723fb51433c1de7244
     path: 
   unityLifecycle:
-    version: 1.2.2
+    version: 1.2.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -3504,7 +3695,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: 
+  type: asset
   description: Custom version of the nunit package build to work with Unity. Used
     by the Unity Test Framework.
   status: 0
@@ -3519,10 +3710,14 @@ m_ResolvedPackages:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     compatible:
     - 1.0.6
     - 2.0.2
     - 2.0.3
+    - 2.0.4
+    - 2.0.5
     recommended: 1.0.6
     deprecated: []
   dependencies: []

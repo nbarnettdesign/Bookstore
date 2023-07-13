@@ -15,6 +15,8 @@ public class IsometricCameraController : MonoBehaviour
     [Header("Zoom Settings")]
     public float zoomSpeed = 20f;
     public float zoomSensitivity = 2f;
+    public int zoomTicks = 0;
+    public int AnoyingTracker = 0;
 
     private Camera mainCamera;
 
@@ -60,18 +62,38 @@ public class IsometricCameraController : MonoBehaviour
         }
 */
         // Zoom camera with mouse scroll
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        //float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        float scrollInput = Input.mouseScrollDelta.y;
         float distance = Vector3.Distance(transform.position, mainCamera.transform.position);
-        //float num = Input.GetAxis("Mouse ScrollWheel");
-       // Debug.Log(num);
+        //if(distance!= 0){ Debug.Log("Distance: " + distance);}
+         if(scrollInput!=0){Debug.Log(Input.mouseScrollDelta.y);}
+         Debug.Log(transform.position.y);
 
-        if (scrollInput != 0)
+        if (scrollInput > 0)
         {
-            float zoomAmount = scrollInput * zoomSpeed * distance * zoomSensitivity * Time.deltaTime;
-            float newDistance = Mathf.Clamp(distance - zoomAmount, minZoomDistance, maxZoomDistance);
-
-            Vector3 direction = (mainCamera.transform.position - transform.position).normalized;
-            mainCamera.transform.position = transform.position + direction * newDistance;
+            if(transform.position.y>=minZoomDistance)
+            {
+                Debug.Log("ZOOM IN");
+                //zoomTicks++;
+                float zoomAmount = -scrollInput * zoomSpeed * zoomSensitivity * Time.deltaTime;
+                float newDistance = Mathf.Clamp(distance - zoomAmount, minZoomDistance, maxZoomDistance);
+                Vector3 direction = (mainCamera.transform.forward);
+                mainCamera.transform.position = transform.position + direction * newDistance;
+            }
+            
+        } else if(scrollInput<0)
+        {
+            if(transform.position.y<=maxZoomDistance)
+            {
+               // zoomTicks--;
+                Debug.Log("ZOOM OUT");
+                float zoomAmount = scrollInput * zoomSpeed * zoomSensitivity * Time.deltaTime;
+                float newDistance = Mathf.Clamp(distance - zoomAmount, minZoomDistance, maxZoomDistance);
+                // if(newDistance!=0){Debug.Log("newDistance: " + newDistance);}
+                Vector3 direction = (-mainCamera.transform.forward);
+                mainCamera.transform.position = transform.position + direction * newDistance;
+            }
+            
         }
     }
 

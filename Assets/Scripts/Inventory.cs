@@ -29,6 +29,7 @@ public class Inventory : MonoBehaviour
     void OnMouseDown()
 {
     uiController.CloseWindows();
+    uiController.UpdateInventoryText(inventory);
     uiController.OpenInventoryStatus();
 }
 }

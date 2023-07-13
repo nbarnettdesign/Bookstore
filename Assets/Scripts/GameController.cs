@@ -36,9 +36,7 @@ private float CustomerSpawnTimer;
     // Start is called before the first frame update
     void Start()
     {
-        store = FindObjectOfType<Store>();
-        bookCreation = FindObjectOfType<BookCreation>();
-        inventory = FindObjectOfType<Inventory>();
+        SetImportantObjects();
         CustomerSpawnTimer = 0f;
         books = 0;
         CustomerSpawnTime = Random.Range(CustomerSpawnTimeMin,CustomerSpawnTimeMax);
@@ -101,6 +99,12 @@ private float CustomerSpawnTimer;
         }
     }
 
+    public void SetImportantObjects()
+    {
+        store = FindObjectOfType<Store>();
+        bookCreation = FindObjectOfType<BookCreation>();
+        inventory = FindObjectOfType<Inventory>();
+    }
     public void GetAvailableBooks()
     {
         availableBookSpots.Clear();
