@@ -379,6 +379,7 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Storage.cs"
 "Assets/Scripts/Store.cs"
+"Assets/Scripts/UICloser.cs"
 "Assets/Scripts/UIController.cs"
 "Assets/Scripts/Worker.cs"
 -langversion:9.0

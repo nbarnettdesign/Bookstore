@@ -18,11 +18,14 @@ public class UIController : MonoBehaviour
     public List<TextMeshProUGUI> storeItemNames;
     public GameObject inventoryStatusWindow;
     public GameObject creationStatusWindow;
+    public GameObject uiCloser;
     public Storage storage;
     private GameController gameController;
+    public bool uiIsUp;
     
     private void Start() {
         gameController = FindObjectOfType<GameController>();
+        uiIsUp = false;
     }
 
     public void UpdateItemNames(List<string> itemNames)
@@ -58,8 +61,10 @@ public class UIController : MonoBehaviour
     public void OpenBookStatus(string title, int cost)
     {
         bookStatusWindow.SetActive(true);
+        uiCloser.SetActive(true);
         currentTitle.text = title;
         currentCost.text = cost.ToString();
+        uiIsUp = true;
     }
 
     public void CloseBookStatus()
@@ -70,8 +75,10 @@ public class UIController : MonoBehaviour
     public void OpenStorageStatus()
     {
         storageStatusWindow.SetActive(true);
+        uiCloser.SetActive(true);
         currentTitle.text = "title";
         currentCost.text = "";
+        uiIsUp = true;
     }
 
     public void CloseStorageStatus()
@@ -89,6 +96,8 @@ public class UIController : MonoBehaviour
     public void OpenStoreStatus()
     {
         storeStatusWindow.SetActive(true);
+        uiCloser.SetActive(true);
+        uiIsUp = true;
     }
 
     public void CloseStoreStatus()
@@ -98,6 +107,8 @@ public class UIController : MonoBehaviour
     public void OpenInventoryStatus()
     {
         inventoryStatusWindow.SetActive(true);
+        uiCloser.SetActive(true);
+        uiIsUp = true;
     }
 
     public void CloseInventoryStatus()
@@ -107,6 +118,8 @@ public class UIController : MonoBehaviour
     public void OpenCreationStatus()
     {
         creationStatusWindow.SetActive(true);
+        uiCloser.SetActive(true);
+        uiIsUp = true;
     }
 
     public void CloseCreationStatus()
@@ -123,6 +136,8 @@ public class UIController : MonoBehaviour
         CloseStoreStatus();
         CloseInventoryStatus();
         CloseCreationStatus();
+        uiCloser.SetActive(false);
+        uiIsUp = false;
 
     }
 

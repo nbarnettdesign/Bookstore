@@ -30,6 +30,9 @@ private void Start() {
     {
         bookName = "Solo Leveling Chapter " + Random.Range( 1,500);
     }
+    bookSpot.bookName = bookName;
+    bookSpot.price = price;
+    bookSpot.pickup = this;
 }
    /* Need something to pick up book here
     * when right clicked player goes over and picks up, then this book nerds out, copy the is being carried i guess
@@ -50,11 +53,11 @@ private void Start() {
             pickedUpObject.SetActive(true);
         }
     }
-    void OnMouseDown()
+    /*void OnMouseDown()
 {
     uiController.CloseWindows();
     uiController.OpenBookStatus(bookName, price);
-}
+}*/
 
 }
 

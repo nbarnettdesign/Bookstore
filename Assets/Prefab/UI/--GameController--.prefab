@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2000036455150039409}
   - component: {fileID: 1485273400159046755}
   - component: {fileID: 6722570182701324929}
-  - component: {fileID: 2833622554279524146}
+  - component: {fileID: 5048485912264902869}
   m_Layer: 0
   m_Name: --GameController--
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1485273400159046755
 MonoBehaviour:
@@ -49,11 +49,14 @@ MonoBehaviour:
   maxCustomers: 8
   currentCustomerCount: 0
   UIController: {fileID: 6722570182701324929}
-  books: 3
+  store: {fileID: 0}
+  bookCreation: {fileID: 0}
+  inventory: {fileID: 0}
+  books: 0
   currentGold: 0
-  CustomerSpawnTime: 8
+  CustomerSpawnTime: 1
   CustomerSpawnTimeMin: 8
-  CustomerSpawnTimeMax: 15
+  CustomerSpawnTimeMax: 12
   Customer: {fileID: 2647694406141899701, guid: 46075f5df58bd884b8e59a3394c59b4e, type: 3}
   Door: {fileID: 0}
   employeeDoor: {fileID: 0}
@@ -62,6 +65,17 @@ MonoBehaviour:
   currentWorker: {fileID: 0}
   restockInProgress: 0
   availableBookSpots: []
+  itemNames:
+  - Spiderwebs
+  - Sticks
+  - Rocks
+  - Dire Wolf Teeth
+  - Owlbear Feathers
+  - Serpent Venom
+  - Dragon Scales
+  - Orc nails
+  - Goblin Drool
+  prices: 000000000100000002000000040000000600000007000000090000000a0000000d000000
   cashierNeeded: 0
   restockNeeded: 0
 --- !u!114 &6722570182701324929
@@ -102,10 +116,30 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  inventoryNames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  storeItemNames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   inventoryStatusWindow: {fileID: 0}
   creationStatusWindow: {fileID: 0}
   storage: {fileID: 0}
---- !u!114 &2833622554279524146
+--- !u!114 &5048485912264902869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,9 +148,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1449216689442452081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d8c56eed6252840a3be4630c161789, type: 3}
+  m_Script: {fileID: 11500000, guid: be1a72748db15f24b82cf659dd7ffb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
-  uiController: {fileID: 0}
-  inventory: 
+  bookName: {fileID: 0}
+  bookValue: {fileID: 0}
