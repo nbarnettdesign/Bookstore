@@ -124,18 +124,30 @@ public class Worker : MonoBehaviour
                         workTimer+=Time.deltaTime;
                     }
                     else{
-                        carriedBookName = storage.GetComponent<Storage>().bookList[0].name;
+                        if(storage.GetComponent<Storage>().bookList.Count > 0 )
+                        {
+                            carriedBookName = storage.GetComponent<Storage>().bookList[0].name;
                         carriedBookPrice = storage.GetComponent<Storage>().bookList[0].value;
                         carriedBookPrefab = storage.GetComponent<Storage>().bookList[0].prefab;
                         storage.GetComponent<Storage>().bookList.RemoveAt(0);
                         storage.GetComponent<Storage>().booksInStorage--;
-                        uiController.CloseStorageStatus();
+                        uiController.DeleteStorageList();
+                        storage.GetComponent<Storage>().PopulateBookList();
                         storage.GetComponent<Storage>().BooksOnTop();
                         if(carriedBookPrefab != null)
                         {
                             currentState = WorkerState.StockShelves;
                         } else currentState = WorkerState.Idle;
                         workTimer = 0;
+
+                        }else 
+                        {
+                            gameController.restockInProgress = false;
+                            currentState = WorkerState.Idle;
+                        }
+                        
+                        
+                        
 
                         
                     }
@@ -223,6 +235,7 @@ public class Worker : MonoBehaviour
                     } else{
                         workTimer = 0f;
                         currentState = WorkerState.Idle;
+                        // @@@ ADD SOMETHING HERE TO CHANCE TO GET SPIDERWEB
                         cleaning = false;
                     }
                 

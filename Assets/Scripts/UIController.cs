@@ -83,14 +83,17 @@ public class UIController : MonoBehaviour
 
     public void CloseStorageStatus()
     {
-        
-         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("StorageStatus");
+        DeleteStorageList();
+        storageStatusWindow.SetActive(false);
+        storage.statusOpen = false;
+    }
+    public void DeleteStorageList()
+    {
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("StorageStatus");
         foreach (GameObject gameObject in gameObjects)
         {
             Destroy(gameObject);
         }
-        storageStatusWindow.SetActive(false);
-        storage.statusOpen = false;
     }
 
     public void OpenStoreStatus()

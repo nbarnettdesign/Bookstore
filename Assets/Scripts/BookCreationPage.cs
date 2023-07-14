@@ -119,7 +119,7 @@ public class BookCreationPage : MonoBehaviour
         string newname = titleBox.text;
         if (newname.Length == 1)
             {
-                string name = "Solo Leveling Chapter " + Random.Range(1, 500);
+                string name = "Swords & Magic " + Random.Range(1, 500);
                 storage.AddBook(name, price, prefab);
                 storage.booksInStorage++;
             }

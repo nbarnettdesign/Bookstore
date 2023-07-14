@@ -324,7 +324,8 @@ public class PlayerController : MonoBehaviour
                 carriedBookPrefabs.Add(storage.GetComponent<Storage>().bookList[0].prefab);
                 storage.GetComponent<Storage>().bookList.RemoveAt(0);
                 storage.GetComponent<Storage>().booksInStorage--;
-                uiController.CloseStorageStatus();
+                uiController.DeleteStorageList();
+                storage.GetComponent<Storage>().PopulateBookList();
                 storage.GetComponent<Storage>().BooksOnTop();
                 hasbook = true;
             }

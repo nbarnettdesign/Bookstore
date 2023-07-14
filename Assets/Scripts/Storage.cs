@@ -53,8 +53,14 @@ public class Storage : MonoBehaviour
            uiController.OpenStorageStatus();
 
         // Set initial y position
-        float yPosition = 110f;
+        PopulateBookList();
+        }
 
+          
+    }
+    public void PopulateBookList()
+    {
+        float yPosition = 110f;
         foreach (Book book in bookList)
             {
                 // Create a new instance of the book UI prefab
@@ -71,7 +77,7 @@ public class Storage : MonoBehaviour
                 yPosition -= 20f; // or whatever value you want
             }
             statusOpen = true;     
-        }   
+        
     }
 
     public void BooksOnTop()
