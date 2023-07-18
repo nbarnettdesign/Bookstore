@@ -142,16 +142,6 @@ private float CustomerSpawnTimer;
         
     }
 
-    public void ContinueStocking()
-    {
-        /*
-            if books in storage greater than 0
-
-
-            else go away, but make sure to turn restock in progress off
-        */
-    }
-
     public void UpdateItemNamesandPrices()
     {
          UIController.UpdateItemNames(itemNames);

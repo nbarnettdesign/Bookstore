@@ -63,6 +63,9 @@ MonoBehaviour:
   bookGhost: {fileID: 7148047189840491376}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &2632226225900818128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,6 +150,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2134030092438578502}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &7767839332968200923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -231,6 +237,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2480687844336529588}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &625336229740848626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -315,6 +324,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2232745041400336203}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &6058741408037167134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -399,6 +411,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2949840727859208707}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &7971372374853763891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -483,6 +498,9 @@ MonoBehaviour:
   bookGhost: {fileID: 4593699635000156145}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &2523162327343496751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -567,6 +585,9 @@ MonoBehaviour:
   bookGhost: {fileID: 8469794205420029667}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &85616576477786898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -651,6 +672,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2576905845364584715}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1021265125250683824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -735,6 +759,9 @@ MonoBehaviour:
   bookGhost: {fileID: 6630542639810141972}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1708975151592300886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -819,6 +846,9 @@ MonoBehaviour:
   bookGhost: {fileID: 5034703277055520014}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1419941307730637591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -903,6 +933,9 @@ MonoBehaviour:
   bookGhost: {fileID: 5349927568864141256}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &3109224004324749852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -987,6 +1020,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2203932983113442093}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &327369194013703491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1071,6 +1107,9 @@ MonoBehaviour:
   bookGhost: {fileID: 7485444357127150818}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &2392569402588278737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1155,6 +1194,9 @@ MonoBehaviour:
   bookGhost: {fileID: 5542079107276633961}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5417910413613545400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1240,128 +1282,6 @@ Transform:
   m_Father: {fileID: 1749700542203938739}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3728134777433938937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7908715688028252494}
-  - component: {fileID: 7970010811695659515}
-  - component: {fileID: 7817320468614840040}
-  - component: {fileID: 7862477289359666781}
-  - component: {fileID: 5876388906616323118}
-  m_Layer: 0
-  m_Name: Cube (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7908715688028252494
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728134777433938937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.218, y: 1.037, z: 0}
-  m_LocalScale: {x: 1.0565853, y: 0.63029563, z: 2.9166005}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4173675142581034945}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7970010811695659515
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728134777433938937}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7817320468614840040
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728134777433938937}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7862477289359666781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728134777433938937}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &5876388906616323118
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728134777433938937}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4024984037605104254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1345,9 @@ MonoBehaviour:
   bookGhost: {fileID: 4980788086215537929}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &8528985248429090325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1446,128 +1369,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.27, y: 0.44987, z: 0.1181244}
   m_Center: {x: 0, y: 0.22, z: 0}
---- !u!1 &4063991224258609433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1038190477545512020}
-  - component: {fileID: 199811928254846491}
-  - component: {fileID: 8897761522622416483}
-  - component: {fileID: 1887281506382397739}
-  - component: {fileID: 4059676119646665137}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1038190477545512020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063991224258609433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.373, z: 0}
-  m_LocalScale: {x: 1.5044003, y: 0.7351, z: 2.9166005}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4173675142581034945}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &199811928254846491
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063991224258609433}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8897761522622416483
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063991224258609433}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1887281506382397739
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063991224258609433}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &4059676119646665137
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4063991224258609433}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4270635250989446903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1432,9 @@ MonoBehaviour:
   bookGhost: {fileID: 9105427205640712354}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5367097984653339667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1715,6 +1519,9 @@ MonoBehaviour:
   bookGhost: {fileID: 3735781530080173457}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5297683642529136682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1799,6 +1606,9 @@ MonoBehaviour:
   bookGhost: {fileID: 7079644088116470535}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &2741073170153932598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1883,6 +1693,9 @@ MonoBehaviour:
   bookGhost: {fileID: 4396656363873134666}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &7742306770738613262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1922,6 +1735,7 @@ GameObject:
   - component: {fileID: 7019959041478393110}
   - component: {fileID: 8335198256761850212}
   - component: {fileID: 8764707519483905767}
+  - component: {fileID: 821152159049847704}
   m_Layer: 0
   m_Name: Top Notch BookShelf
   m_TagString: Bookshelf
@@ -1936,19 +1750,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5558747522602272197}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7771459, z: 0, w: 0.62932044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1038190477545512020}
-  - {fileID: 6950608754580900111}
-  - {fileID: 7908715688028252494}
   - {fileID: 1749700542203938739}
   - {fileID: 5491521363356821950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 102, z: 0}
 --- !u!114 &-1023465917210803272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,7 +1826,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.05, z: 2}
-  m_Center: {x: -0.5, y: 1.27, z: 0}
+  m_Center: {x: -0.5, y: 1, z: 0}
 --- !u!65 &3481876943038175001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2036,7 +1847,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.1, z: 2}
-  m_Center: {x: -0.5, y: 0.1, z: 0}
+  m_Center: {x: -0.5, y: -0.14, z: 0}
 --- !u!65 &8719660875375524417
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2057,7 +1868,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.05, z: 2}
-  m_Center: {x: -0.5, y: 1.78, z: 0}
+  m_Center: {x: -0.5, y: 1.49, z: 0}
 --- !u!65 &1882166465607874053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2078,7 +1889,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.05, z: 2}
-  m_Center: {x: -0.5, y: 0.73, z: 0}
+  m_Center: {x: -0.5, y: 0.47, z: 0}
 --- !u!65 &978943020036521534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2099,7 +1910,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.05, z: 2}
-  m_Center: {x: -0.5, y: 2.25, z: 0}
+  m_Center: {x: -0.5, y: 1.97, z: 0}
 --- !u!65 &7019959041478393110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2120,7 +1931,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.4, y: 2.4, z: 2}
-  m_Center: {x: -0.72, y: 1.2, z: 0}
+  m_Center: {x: -0.72, y: 1, z: 0}
 --- !u!65 &8335198256761850212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2140,8 +1951,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.4, z: 0.12}
-  m_Center: {x: -0.5, y: 1.2, z: -0.97}
+  m_Size: {x: 1, y: 2.3, z: 0.12}
+  m_Center: {x: -0.5, y: 0.96, z: -0.97}
 --- !u!65 &8764707519483905767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2161,8 +1972,24 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.4, z: 0.12}
-  m_Center: {x: -0.5, y: 1.2, z: 0.97}
+  m_Size: {x: 1, y: 2.3, z: 0.12}
+  m_Center: {x: -0.5, y: 0.96, z: 0.97}
+--- !u!208 &821152159049847704
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558747522602272197}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.1, z: 0.995}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.51, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5982652606847369107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2053,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2571069428667299953}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &258564970949262624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2310,6 +2140,9 @@ MonoBehaviour:
   bookGhost: {fileID: 3364100490265297270}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &2523319552630972549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2394,6 +2227,9 @@ MonoBehaviour:
   bookGhost: {fileID: 2132080745687330606}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &6429550725734443792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2415,128 +2251,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.27, y: 0.44987, z: 0.1181244}
   m_Center: {x: 0, y: 0.22, z: 0}
---- !u!1 &6274370973949020068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6950608754580900111}
-  - component: {fileID: 8294982876425295887}
-  - component: {fileID: 8542349345733784187}
-  - component: {fileID: 8416095545800560580}
-  - component: {fileID: 4251006050159543491}
-  m_Layer: 0
-  m_Name: Cube (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &6950608754580900111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6274370973949020068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.392, z: 0}
-  m_LocalScale: {x: 1.5044003, y: 0.07416309, z: 2.9166005}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4173675142581034945}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8294982876425295887
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6274370973949020068}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8542349345733784187
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6274370973949020068}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8416095545800560580
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6274370973949020068}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &4251006050159543491
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6274370973949020068}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &6518511552837683610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,6 +2314,9 @@ MonoBehaviour:
   bookGhost: {fileID: 8337122351202844387}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &6406981069728369484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2684,6 +2401,9 @@ MonoBehaviour:
   bookGhost: {fileID: 3254683771419105070}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5476841859237236902
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2768,6 +2488,9 @@ MonoBehaviour:
   bookGhost: {fileID: 6841316075957874519}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &108223914905924716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2852,6 +2575,9 @@ MonoBehaviour:
   bookGhost: {fileID: 7097928807928199323}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &3046790627332791631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2936,6 +2662,9 @@ MonoBehaviour:
   bookGhost: {fileID: 6288173476096231317}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5234869073317190172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3020,6 +2749,9 @@ MonoBehaviour:
   bookGhost: {fileID: 5735747197384558056}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1183795320237302658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3104,6 +2836,9 @@ MonoBehaviour:
   bookGhost: {fileID: 6857067827638141638}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1906691514578868716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3188,6 +2923,9 @@ MonoBehaviour:
   bookGhost: {fileID: 159741398575261024}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &1058997989917357398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3272,6 +3010,9 @@ MonoBehaviour:
   bookGhost: {fileID: 314254751794605574}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &6104520823885885193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3356,6 +3097,9 @@ MonoBehaviour:
   bookGhost: {fileID: 4669252949365355956}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &7366708961650994739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3440,6 +3184,9 @@ MonoBehaviour:
   bookGhost: {fileID: 1816056129887251840}
   currentBook: {fileID: 0}
   isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &4221205842180986958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3485,7 +3232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9073828358444429210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.144, z: 0}
+  m_LocalPosition: {x: 0, y: -0.407, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5558,7 +5305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1419345971897395660, guid: 00f8129b77cebba45b048a6ff5e7dfbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.335
+      value: 1.072
       objectReference: {fileID: 0}
     - target: {fileID: 1419345971897395660, guid: 00f8129b77cebba45b048a6ff5e7dfbc, type: 3}
       propertyPath: m_LocalPosition.z

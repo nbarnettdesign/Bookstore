@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4006764307847380346}
   - component: {fileID: -2912208356080931206}
   - component: {fileID: 2236179513206280307}
+  - component: {fileID: 6682417788620890423}
+  - component: {fileID: 2100290933044289349}
   m_Layer: 0
   m_Name: Crappy Bookshelf
   m_TagString: Bookshelf
@@ -35,7 +37,7 @@ Transform:
   - {fileID: 4707585667187094763}
   - {fileID: 6533425416572480630}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4006764307847380346
 MonoBehaviour:
@@ -97,6 +99,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.35, y: 0.05, z: 1.35}
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &6682417788620890423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470524811030749978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36fa8edcf3bab444ad1fd5ea63eb555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookSpots: []
+--- !u!208 &2100290933044289349
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470524811030749978}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.425, y: 0.77, z: 0.425}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.99, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1374227907228685995
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookGhost: {fileID: 6224827880831858932}
   currentBook: {fileID: 0}
-  isAvailable: 0
+  isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &8501707505603645472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -243,7 +277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookGhost: {fileID: 4785703701584993743}
   currentBook: {fileID: 0}
-  isAvailable: 0
+  isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &5242049051903330985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -327,7 +364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookGhost: {fileID: 3839846141071709468}
   currentBook: {fileID: 0}
-  isAvailable: 0
+  isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &3870113782270980132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -447,7 +487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookGhost: {fileID: 876848823702464129}
   currentBook: {fileID: 0}
-  isAvailable: 0
+  isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &6314659103229310168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -531,7 +574,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookGhost: {fileID: 781725983051760424}
   currentBook: {fileID: 0}
-  isAvailable: 0
+  isAvailable: 1
+  bookName: 
+  price: 0
+  pickup: {fileID: 0}
 --- !u!65 &504525317423463
 BoxCollider:
   m_ObjectHideFlags: 0

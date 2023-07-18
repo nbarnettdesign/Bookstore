@@ -366,6 +366,8 @@
 "Assets/Scripts/Bookshelf.cs"
 "Assets/Scripts/BookSpot.cs"
 "Assets/Scripts/BookUI.cs"
+"Assets/Scripts/BuildingManager.cs"
+"Assets/Scripts/CheckPlacement.cs"
 "Assets/Scripts/Customer.cs"
 "Assets/Scripts/Decorations.cs"
 "Assets/Scripts/GameController.cs"

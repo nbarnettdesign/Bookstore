@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\gizmosphere.cs" />
      <Compile Include="Assets\Scripts\LinePoint.cs" />
      <Compile Include="Assets\Scripts\PaymentLine.cs" />
+     <Compile Include="Assets\Scripts\CheckPlacement.cs" />
      <Compile Include="Assets\Scripts\Worker.cs" />
      <Compile Include="Assets\Scripts\Customer.cs" />
      <Compile Include="Assets\Scripts\BookSpot.cs" />
@@ -59,6 +60,7 @@
      <Compile Include="Assets\Scripts\Store.cs" />
      <Compile Include="Assets\Scripts\BookUI.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\BookCreation.cs" />
      <Compile Include="Assets\Scripts\UICloser.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

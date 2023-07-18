@@ -12,6 +12,8 @@ public class UIController : MonoBehaviour
     public GameObject bookStatusWindow;
     public GameObject storageStatusWindow;
     public GameObject storeStatusWindow;
+    public GameObject buildModeWindow;
+    public GameObject buildModeButton;
     public List<TextMeshProUGUI> storePrices;
     public List<TextMeshProUGUI> inventoryAmount;
     public List<TextMeshProUGUI> inventoryNames;
@@ -130,6 +132,21 @@ public class UIController : MonoBehaviour
         creationStatusWindow.SetActive(false);
     }
 
+    public void OpenBuildMode()
+    {
+        buildModeButton.SetActive(false);
+        buildModeWindow.SetActive(true);
+        // I Dont think having this is a good idea, especially while placing its closing build
+        //uiCloser.SetActive(true);
+        //uiIsUp = true;
+    }
+
+    public void CloseBuildMode()
+    {
+        buildModeWindow.SetActive(false);
+        buildModeButton.SetActive(true);
+    }
+
     
     
     public void CloseWindows()
@@ -139,6 +156,7 @@ public class UIController : MonoBehaviour
         CloseStoreStatus();
         CloseInventoryStatus();
         CloseCreationStatus();
+        CloseBuildMode();
         uiCloser.SetActive(false);
         uiIsUp = false;
 
