@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\BAKUP_PLAYERCONTROLLER.cs" />
      <Compile Include="Assets\Scripts\PickupObject.cs" />
      <Compile Include="Assets\Scripts\gizmosphere.cs" />
      <Compile Include="Assets\Scripts\LinePoint.cs" />

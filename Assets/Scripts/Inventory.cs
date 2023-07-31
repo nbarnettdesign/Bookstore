@@ -19,9 +19,9 @@ public class Inventory : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void UpdateInventoryAmounts(int i)
+    public void UpdateInventoryAmounts(int itemNumber, int amount)
     {
-        inventory[i]++;
+        inventory[itemNumber]+= amount;
         uiController.UpdateInventoryText(inventory);
     }
     

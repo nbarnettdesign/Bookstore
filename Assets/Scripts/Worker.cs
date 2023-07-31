@@ -25,6 +25,7 @@ public class Worker : MonoBehaviour
     public List<BookSpot> availableBookSpots;
     public Vector3 employeeDoor;
     public GameController gameController;
+    public Store store;
     public PaymentLine cashRegister;
     public float workTime;
     private float workTimer;
@@ -40,7 +41,9 @@ public class Worker : MonoBehaviour
     void Start()
     {
         // Get reference to the NavMeshAgent component
+        
         navMeshAgent = GetComponent<NavMeshAgent>();
+        store = FindObjectOfType<Store>();
         uiController = FindObjectOfType<UIController>();
         storage = GameObject.FindGameObjectWithTag("Storage");
         currentState = WorkerState.Idle;
@@ -235,7 +238,8 @@ public class Worker : MonoBehaviour
                     } else{
                         workTimer = 0f;
                         currentState = WorkerState.Idle;
-                        // @@@ ADD SOMETHING HERE TO CHANCE TO GET SPIDERWEB
+                        int spiderwebAmount = store.SpiderwebMath();
+                        store.AddItem(0,spiderwebAmount);
                         cleaning = false;
                     }
                 

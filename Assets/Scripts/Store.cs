@@ -6,6 +6,9 @@ public class Store : MonoBehaviour
 {
     public GameController gameController;
     public UIController uiController;
+    public float spiderwebChance;
+    public int spiderwebMin;
+    public int spiderwebMax;
     public List<int> prices;
 
     // Start is called before the first frame update
@@ -22,13 +25,28 @@ public class Store : MonoBehaviour
         if(gameController.currentGold>= itemCost)
         {
             gameController.currentGold -= itemCost;
-            gameController.inventory.UpdateInventoryAmounts(number);
+            gameController.inventory.UpdateInventoryAmounts(number, 1);
             uiController.UpdateGoldText(gameController.currentGold);
         }
+    }
+
+    public void AddItem(int itemNumber, int amount)
+    {
+        gameController.inventory.UpdateInventoryAmounts(itemNumber, amount);
     }
     void OnMouseDown()
     {
         uiController.CloseWindows();
         uiController.OpenStoreStatus();
+    }
+
+    public int SpiderwebMath()
+    {
+        float randNum = Random.Range(0,1);
+        if(randNum>spiderwebChance)
+        {
+            return 0;
+        }
+        return Random.Range(spiderwebMin,spiderwebMax);
     }
 }

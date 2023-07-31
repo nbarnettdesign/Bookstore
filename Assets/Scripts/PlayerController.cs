@@ -26,11 +26,15 @@ public class PlayerController : MonoBehaviour
     public bool takingABook;
     public bool workingAtCreation;
     public bool atCreation;
+    public bool cleaning;
     BookSpot availableBookSpot;
     public int howManyBooksCanCarry;
     public List<string> carriedBookNames;
     public List<int> carriedBookPrices;
     public List<GameObject> carriedBookPrefabs;
+    [SerializeField] float minCleanTime;
+    [SerializeField] float maxCleanTime;
+    float cleanTimer;
 
 
     void Start()
@@ -49,6 +53,8 @@ public class PlayerController : MonoBehaviour
         workingAtStorage = false;
         workingAtBookshelf = false;
         workingAtCreation = false;
+        cleaning = false;
+        cleanTimer = Random.Range(minCleanTime,maxCleanTime);
     }
 
     void Update()
@@ -80,6 +86,7 @@ public class PlayerController : MonoBehaviour
                     workingAtStorage = false;
                     workingAtCreation = false;
                     takingABook = false;
+                    cleaning = false;
                 }
                 else if (hit.collider.CompareTag("CheckoutDesk"))
                 {
@@ -93,6 +100,7 @@ public class PlayerController : MonoBehaviour
                     workingAtStorage = false;
                     workingAtCreation = false;
                     takingABook = false;
+                    cleaning = false;
 
                 }
                 else if (hit.collider.CompareTag("Storage"))
@@ -114,6 +122,7 @@ public class PlayerController : MonoBehaviour
                     workingAtBookshelf = false;
                     workingAtCreation = false;
                     takingABook = false;
+                    cleaning = false;
                 }
                 else if (hit.collider.CompareTag("Bookshelf"))
                 {
@@ -133,6 +142,7 @@ public class PlayerController : MonoBehaviour
                     workingAtStorage = false;
                     workingAtCreation = false;
                     takingABook = false;
+                    cleaning = false;
                 }
                 else if (hit.collider.CompareTag("BookPoint"))
                 {
@@ -151,6 +161,7 @@ public class PlayerController : MonoBehaviour
                     }
                     workingAtStorage = false;
                     workingAtCreation = false;
+                    cleaning = false;
                     
                 }
                 else if (hit.collider.CompareTag("BookCreation"))
@@ -166,48 +177,79 @@ public class PlayerController : MonoBehaviour
                     }
                     workingAtStorage = false;
                     workingAtBookshelf = false;
+                    cleaning = false;
+                }
+                else if (hit.collider.GetComponent<Decorations>() != null)
+                {
+                    if(hit.collider.GetComponent<Decorations>().cleanable == true)
+                    {
+                    
+                        cleaning = true;
+                        cleanTimer = Random.Range(minCleanTime,maxCleanTime);
+                        Debug.Log("CLEAN TIME: " + cleanTimer);
+                        navMeshAgent.SetDestination(hit.collider.transform.position);
+                        if (workingAtCheckout == true)
+                        {
+                            workingAtCheckout = false;
+                            cashRegister.cashierAssigned = false;
+                            cashRegister.cashierAtTill = false;
+                            atCheckout = false;
+                        }
+                        workingAtStorage = false;
+                        workingAtBookshelf = false;
+                        workingAtCreation = false;
+                    }
                 }
             }
         }
 
-        if(workingAtCheckout == true)
-        {
-            if (Vector3.Distance(this.transform.position, cashRegister.cashierPoint.position) < 1f)
+            if(workingAtCheckout == true)
+            {
+                if (Vector3.Distance(this.transform.position, cashRegister.cashierPoint.position) < 1f)
+                    {
+                        cashRegister.cashierAtTill = true;
+                        FaceTarget(cashRegister.paymentPoint.transform.position);
+                        atCheckout = true;
+                    }
+            }
+            else if (workingAtStorage == true)
+            {
+                if (Vector3.Distance(this.transform.position, storage.transform.position) < 2f)
                 {
-                    cashRegister.cashierAtTill = true;
-                    FaceTarget(cashRegister.paymentPoint.transform.position);
-                    atCheckout = true;
+                    WorkAtStorage();
                 }
-        }else if (workingAtStorage == true)
-        {
-            if (Vector3.Distance(this.transform.position, storage.transform.position) < 2f)
-            {
-                WorkAtStorage();
             }
-        }else if (workingAtBookshelf == true)
-        {
-            if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
+            else if (workingAtBookshelf == true)
             {
-                StockABookshelf();
+                if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
+                {
+                    StockABookshelf();
+                }
+            }
+            else if (workingAtCreation == true)
+            {
+                if (Vector3.Distance(this.transform.position, bookCreation.transform.position) < 2f)
+                {
+                    uiController.OpenCreationStatus();
+                    workingAtCreation = false;
+                    atCreation = true;
+                }
+            }
+            else if (takingABook == true)
+            {
+                if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
+                {
+                    TakeBookOffShelf();
+                }
+            }
+            else if (cleaning == true)
+            {
+                if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
+                {
+                    CleanSomething();
+                }
             }
         }
-        else if (workingAtCreation == true)
-        {
-            if (Vector3.Distance(this.transform.position, bookCreation.transform.position) < 2f)
-            {
-                uiController.OpenCreationStatus();
-                workingAtCreation = false;
-                atCreation = true;
-            }
-        }
-        else if (takingABook == true)
-        {
-            if (Vector3.Distance(this.transform.position, navMeshAgent.destination) < 2f)
-            {
-                TakeBookOffShelf();
-            }
-        }
-    }
 
     public void WorkAtCheckoutDesk()
     {
@@ -220,6 +262,22 @@ public class PlayerController : MonoBehaviour
         cashRegister.cashierAtTill = false;
         cashRegister.cashierAssigned = true;
         navMeshAgent.destination =(cashRegister.cashierPoint.position);
+    }
+    public void CleanSomething()
+    {
+        if(cleanTimer >0)
+        {
+            cleanTimer-=Time.deltaTime;
+        }
+        else if (cleanTimer <= 0)
+        {
+            int spiderwebAmount = store.SpiderwebMath();
+            store.AddItem(0,spiderwebAmount);
+            cleanTimer = Random.Range(minCleanTime, maxCleanTime);
+            Debug.Log("Spider Web: " + spiderwebAmount);
+            cleaning = false;
+        }
+        
     }
 
     public void PickABookshelf(Bookshelf shelf)
@@ -247,7 +305,8 @@ public class PlayerController : MonoBehaviour
             navMeshAgent.SetDestination(availableBookSpot.transform.position);
             workingAtBookshelf = true;
             takingABook = false;
-        } else if(bookSpot.isAvailable == false && carriedBookNames.Count < howManyBooksCanCarry)
+        } 
+        else if(bookSpot.isAvailable == false && carriedBookNames.Count < howManyBooksCanCarry)
         {
             workingAtBookshelf = false;
             navMeshAgent.SetDestination(bookSpot.transform.position);

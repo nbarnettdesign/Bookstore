@@ -4,25 +4,48 @@ using UnityEngine;
 
 public class CheckPlacement : MonoBehaviour
 {
-
-    private BuildingManager buildingManager;
+  private List<Collider> collidingWith = new List<Collider>();
+  [SerializeField] private BuildingManager buildingManager;
+  [SerializeField] private Material noPlaceMaterial;
+  private Material placeMaterial;
+  [SerializeField] private MeshRenderer meshRenderer;
+  public bool isPlaced;
     // Start is called before the first frame update
     void Start()
     {
         buildingManager = FindObjectOfType<BuildingManager>();
+        placeMaterial = meshRenderer.material;
     }
 
    private void OnTriggerEnter(Collider other) 
    {
-     if(other.gameObject.CompareTag("Object")){
-        buildingManager.canPlace = false;
+    //Debug.Log(other);
+     if(!isPlaced)
+     {
+      if(other.name != "Floor" && other.name != "Camera Bounds")
+      {
+          buildingManager.canPlace = false;
+          meshRenderer.material = noPlaceMaterial;
+          collidingWith.Add(other);
+      }
      }
+     
    }
 
    private void OnTriggerExit(Collider other) 
    {
-    if(other.gameObject.CompareTag("Object")){
-        buildingManager.canPlace = true;
-     }
-   }
+    if(!isPlaced)
+    {
+      if(collidingWith.Contains(other))
+      {
+        collidingWith.Remove(other);
+        if(collidingWith.Count == 0)
+        {
+          buildingManager.canPlace = true;
+          meshRenderer.material = placeMaterial;
+        }  
+      }
+    }
+    
+   } 
 }

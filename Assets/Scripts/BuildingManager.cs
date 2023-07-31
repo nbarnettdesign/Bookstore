@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class BuildingManager : MonoBehaviour
   {
     pendingObj.transform.Rotate(Vector3.up, rotateAmount);
   }
+  void ReverseRotateObject()
+  {
+    pendingObj.transform.Rotate(Vector3.up, -rotateAmount);
+  }
 
     // Update is called once per frame
     void Update()
@@ -53,7 +58,7 @@ public class BuildingManager : MonoBehaviour
             }
             else {pendingObj.transform.position = pos;}
 
-            if(Input.GetMouseButtonDown(0) && canPlace)
+            if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && canPlace)
             {
                 PlaceObject();
             }
@@ -61,11 +66,16 @@ public class BuildingManager : MonoBehaviour
             {
                 RotateObject();
             }
+            if(Input.GetKeyDown(KeyCode.T))
+            {
+                ReverseRotateObject();
+            }
         }
     }
     
     void PlaceObject()
     {
+        pendingObj.GetComponent<CheckPlacement>().isPlaced = true;
         pendingObj = null;
     }
 

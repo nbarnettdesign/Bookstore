@@ -3168,6 +3168,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   rotateAmount: 45
+  canPlace: 1
 --- !u!4 &595438227
 Transform:
   m_ObjectHideFlags: 0
@@ -9496,7 +9497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8052539082777520969, guid: 008fa6a23498b5a4088d506ed122eab8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.16
+      value: 2.104
       objectReference: {fileID: 0}
     - target: {fileID: 8052539082777520969, guid: 008fa6a23498b5a4088d506ed122eab8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9757,6 +9758,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 369335905}
     - target: {fileID: 2613285307359877480, guid: fcfc229389d37be488d2c23f49a5cfa4, type: 3}
+      propertyPath: statusOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613285307359877480, guid: fcfc229389d37be488d2c23f49a5cfa4, type: 3}
       propertyPath: booksOnTop1
       value: 
       objectReference: {fileID: 1093296077}
@@ -9774,7 +9779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2613285307359877480, guid: fcfc229389d37be488d2c23f49a5cfa4, type: 3}
       propertyPath: bookList.Array.size
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2613285307359877480, guid: fcfc229389d37be488d2c23f49a5cfa4, type: 3}
       propertyPath: bookList.Array.data[0].name
@@ -10119,6 +10124,18 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1119115587}
+    - target: {fileID: 5104032710856329681, guid: eab79a5d8372c8246b078208713c791d, type: 3}
+      propertyPath: spiderwebMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104032710856329681, guid: eab79a5d8372c8246b078208713c791d, type: 3}
+      propertyPath: spiderwebMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104032710856329681, guid: eab79a5d8372c8246b078208713c791d, type: 3}
+      propertyPath: spiderwebChance
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5900024975677936355, guid: eab79a5d8372c8246b078208713c791d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.55
