@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Storage.cs" />
      <Compile Include="Assets\Scripts\Decorations.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\WorkerManager.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Scripts\PanAndZoom.cs" />
      <Compile Include="Assets\Scripts\BookCreationPage.cs" />

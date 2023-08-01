@@ -44,7 +44,9 @@ public class Worker : MonoBehaviour
         
         navMeshAgent = GetComponent<NavMeshAgent>();
         store = FindObjectOfType<Store>();
+        gameController = FindAnyObjectByType<GameController>();
         uiController = FindObjectOfType<UIController>();
+        cashRegister = FindObjectOfType<PaymentLine>();
         storage = GameObject.FindGameObjectWithTag("Storage");
         currentState = WorkerState.Idle;
         workTimer =0f;
@@ -73,6 +75,7 @@ public class Worker : MonoBehaviour
                     {
                         currentState = WorkerState.Cashier;
                         cashRegister.cashierAssigned = true;
+                        cashRegister.currentCashier = this;
                         goingToRegister = true;
                     }
                 else if(gameController.restockNeeded == true && goingToRegister == false  && gameController.restockInProgress == false)  
@@ -118,6 +121,7 @@ public class Worker : MonoBehaviour
             case WorkerState.RetrieveBooksFromStorage:
                 // Set destination to the stock shelves object
                  navMeshAgent.destination =(storage.transform.position);
+                 gameController.restockInProgress = true;
                 if (Vector3.Distance(this.transform.position, storage.transform.position) < 2f)
                 {
                     FaceTarget(storage.transform.position);
@@ -130,16 +134,17 @@ public class Worker : MonoBehaviour
                         if(storage.GetComponent<Storage>().bookList.Count > 0 )
                         {
                             carriedBookName = storage.GetComponent<Storage>().bookList[0].name;
-                        carriedBookPrice = storage.GetComponent<Storage>().bookList[0].value;
-                        carriedBookPrefab = storage.GetComponent<Storage>().bookList[0].prefab;
-                        storage.GetComponent<Storage>().bookList.RemoveAt(0);
-                        storage.GetComponent<Storage>().booksInStorage--;
-                        uiController.DeleteStorageList();
-                        storage.GetComponent<Storage>().PopulateBookList();
-                        storage.GetComponent<Storage>().BooksOnTop();
+                            carriedBookPrice = storage.GetComponent<Storage>().bookList[0].value;
+                            carriedBookPrefab = storage.GetComponent<Storage>().bookList[0].prefab;
+                            storage.GetComponent<Storage>().bookList.RemoveAt(0);
+                            storage.GetComponent<Storage>().booksInStorage--;
+                            uiController.DeleteStorageList();
+                            storage.GetComponent<Storage>().PopulateBookList();
+                            storage.GetComponent<Storage>().BooksOnTop();
                         if(carriedBookPrefab != null)
                         {
                             currentState = WorkerState.StockShelves;
+                            gameController.restockInProgress = false;
                         } else currentState = WorkerState.Idle;
                         workTimer = 0;
 
@@ -166,12 +171,11 @@ public class Worker : MonoBehaviour
                         bookSpotFree = availableBookSpots[randomIndex];
                         navMeshAgent.destination = bookSpotFree.transform.position;
                         bookSpotFree.isAvailable = false;
+                        
 
                     }
                     else if (bookSpotFree !=null)
                     {
-
-                    
                         if (Vector3.Distance(this.transform.position, bookSpotFree.transform.position) < 2f)
                         {
                            FaceTarget(bookSpotFree.transform.position);
@@ -203,7 +207,6 @@ public class Worker : MonoBehaviour
                                 availableBookSpots = gameController.availableBookSpots;
                                 gameController.RestockShelves();
                                 currentState = WorkerState.Idle;
-                                gameController.restockInProgress = false;
                                 
                             }
                         }
@@ -224,23 +227,29 @@ public class Worker : MonoBehaviour
                        {
                             randomIndexCleaning = Random.Range(0,decorationToClean.Count);
                             cleanTarget = decorationToClean[randomIndexCleaning];
-                            navMeshAgent.destination = cleanTarget.transform.position;
-                            cleaning = true;
+                            if(cleanTarget.isBeingCleaned == false)
+                            {
+                                cleanTarget.isBeingCleaned = true;
+                                navMeshAgent.destination = cleanTarget.transform.position;
+                                cleaning = true;
+                            } else currentState = WorkerState.Idle;
+                            
                        }
                         
                 
-                if (Vector3.Distance(this.transform.position, cleanTarget.transform.position) < 2f)
-                {
-                    FaceTarget(cleanTarget.transform.position);
-                    if(workTimer<=workTime)
+                    if (Vector3.Distance(this.transform.position, cleanTarget.transform.position) < 2f)
                     {
-                        workTimer+=Time.deltaTime;
-                    } else{
-                        workTimer = 0f;
-                        currentState = WorkerState.Idle;
-                        int spiderwebAmount = store.SpiderwebMath();
-                        store.AddItem(0,spiderwebAmount);
-                        cleaning = false;
+                        FaceTarget(cleanTarget.transform.position);
+                        if(workTimer<=workTime)
+                        {
+                            workTimer+=Time.deltaTime;
+                        } else{
+                            workTimer = 0f;
+                            currentState = WorkerState.Idle;
+                            int spiderwebAmount = store.SpiderwebMath();
+                            store.AddItem(0,spiderwebAmount);
+                            cleaning = false;
+                            cleanTarget.isBeingCleaned = false;
                     }
                 
                 }

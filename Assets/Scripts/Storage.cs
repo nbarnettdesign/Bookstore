@@ -16,6 +16,7 @@ public class Storage : MonoBehaviour
     public List<Book> bookList = new List<Book>();
     public int booksInStorage;
     private UIController uiController;
+    private GameController gameController;
     public GameObject bookUIPrefab;
     public bool statusOpen;
     public GameObject booksOnTop1;
@@ -23,7 +24,10 @@ public class Storage : MonoBehaviour
     public GameObject booksOnTop3;
 
     private void Start() {
+        gameController = FindObjectOfType<GameController>();
         booksInStorage = bookList.Count;
+        //Debug.Log("Books in storage: "+booksInStorage);
+        gameController.RestockShelves();
         uiController = FindObjectOfType<UIController>();
         statusOpen = false;
         BooksOnTop();

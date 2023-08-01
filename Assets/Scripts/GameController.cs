@@ -124,8 +124,10 @@ private float CustomerSpawnTimer;
         GetAvailableBooks();
         if (storage.booksInStorage >0 && availableBookSpots.Count >0)
             {
-        restockNeeded = true;
-            } else restockNeeded = false;
+                restockNeeded = true;
+            } else {
+                restockNeeded = false;
+            }
         /*if(!restockInProgress)
         {
             GetAvailableBooks();

@@ -10,10 +10,15 @@ public class CheckPlacement : MonoBehaviour
   private Material placeMaterial;
   [SerializeField] private MeshRenderer meshRenderer;
   public bool isPlaced;
+  public int value;
     // Start is called before the first frame update
     void Start()
     {
-        buildingManager = FindObjectOfType<BuildingManager>();
+        if(buildingManager == null)
+        {
+          buildingManager = FindObjectOfType<BuildingManager>();
+        }
+          
         placeMaterial = meshRenderer.material;
     }
 

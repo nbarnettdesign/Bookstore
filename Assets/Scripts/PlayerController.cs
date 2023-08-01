@@ -186,7 +186,6 @@ public class PlayerController : MonoBehaviour
                     
                         cleaning = true;
                         cleanTimer = Random.Range(minCleanTime,maxCleanTime);
-                        Debug.Log("CLEAN TIME: " + cleanTimer);
                         navMeshAgent.SetDestination(hit.collider.transform.position);
                         if (workingAtCheckout == true)
                         {
@@ -274,7 +273,6 @@ public class PlayerController : MonoBehaviour
             int spiderwebAmount = store.SpiderwebMath();
             store.AddItem(0,spiderwebAmount);
             cleanTimer = Random.Range(minCleanTime, maxCleanTime);
-            Debug.Log("Spider Web: " + spiderwebAmount);
             cleaning = false;
         }
         
@@ -387,6 +385,7 @@ public class PlayerController : MonoBehaviour
                 storage.GetComponent<Storage>().PopulateBookList();
                 storage.GetComponent<Storage>().BooksOnTop();
                 hasbook = true;
+                gameController.RestockShelves();
             }
             /*  @@@ bellow is for putting books back into storage, need a different clickable to do that (Maybe Button in Storage)
             else if (carriedBookNames.Count >= howManyBooksCanCarry)

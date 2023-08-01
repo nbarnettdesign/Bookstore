@@ -18,6 +18,20 @@ public class BuildingManager : MonoBehaviour
     private LayerMask layerMask;
     public float rotateAmount;
     public bool canPlace = true;
+    public UIController uiController;
+    public GameController gameController;
+    private bool alreadyPlacedItem;
+    private Vector3 placedItemTransform;
+    private Quaternion placedItemRotation;
+    public GameObject cancelButton;
+    public GameObject sellButton;
+
+    private void Start() 
+    {
+        uiController = FindObjectOfType<UIController>();
+        gameController = FindObjectOfType<GameController>();
+        alreadyPlacedItem = false;
+    }
 
     private void FixedUpdate() 
     {
@@ -71,12 +85,49 @@ public class BuildingManager : MonoBehaviour
                 ReverseRotateObject();
             }
         }
+        else if(pendingObj == null)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if(hit.collider.GetComponent<CheckPlacement>() == true)
+                        {
+                            alreadyPlacedItem = true;
+                            placedItemTransform = hit.collider.transform.position;
+                            placedItemRotation = hit.collider.transform.rotation;
+                            pendingObj = hit.collider.gameObject;
+                            sellButton.SetActive(true);
+                            //if click on object while in build mode, if it has checkplacement script
+                            // it picks it up and makes i tthe current placement object
+                        }
+                 } 
+            }
+        }
     }
     
     void PlaceObject()
     {
-        pendingObj.GetComponent<CheckPlacement>().isPlaced = true;
-        pendingObj = null;
+        if(alreadyPlacedItem == false)
+        {
+            if(gameController.currentGold >= pendingObj.GetComponent<CheckPlacement>().value)
+            {
+                gameController.currentGold -= pendingObj.GetComponent<CheckPlacement>().value;
+                uiController.UpdateGoldText(gameController.currentGold);
+                pendingObj.GetComponent<CheckPlacement>().isPlaced = true;
+                pendingObj = null;
+            }
+        }
+        else if (alreadyPlacedItem == true)
+        {
+                pendingObj.GetComponent<CheckPlacement>().isPlaced = true;
+                pendingObj = null;
+                alreadyPlacedItem = false;
+        }
+        
+        
     }
 
     public void ToggleGrid()
@@ -97,4 +148,31 @@ public class BuildingManager : MonoBehaviour
             }
             return pos;
         }
+        
+    public void CloseBuildMode()
+    {
+        if(alreadyPlacedItem == true)
+        {
+            pendingObj.transform.position = placedItemTransform;
+            pendingObj.transform.rotation = placedItemRotation;
+            pendingObj = null;
+            alreadyPlacedItem = false;
+            sellButton.SetActive(false);
+        } else
+        { 
+            Destroy(pendingObj);
+        }
+    }
+
+    public void SellButton()
+    {
+        if(alreadyPlacedItem == true)
+        {
+            gameController.currentGold += pendingObj.GetComponent<CheckPlacement>().value;
+            uiController.UpdateGoldText(gameController.currentGold);
+            alreadyPlacedItem = false;
+            Destroy(pendingObj);
+            sellButton.SetActive(false);
+        }
+    }
 }

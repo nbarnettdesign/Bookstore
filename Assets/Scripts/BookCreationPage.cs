@@ -122,6 +122,7 @@ public class BookCreationPage : MonoBehaviour
                 string name = "Swords & Magic " + Random.Range(1, 500);
                 storage.AddBook(name, price, prefab);
                 storage.booksInStorage++;
+                gameController.RestockShelves();
             }
             else
             {

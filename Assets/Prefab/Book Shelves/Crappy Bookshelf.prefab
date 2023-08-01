@@ -144,6 +144,8 @@ MonoBehaviour:
   buildingManager: {fileID: 0}
   noPlaceMaterial: {fileID: 2100000, guid: 6d4c681d5ded10d429140bab73486b5b, type: 2}
   meshRenderer: {fileID: 6643921754531115712}
+  isPlaced: 0
+  value: 10
 --- !u!1 &1374227907228685995
 GameObject:
   m_ObjectHideFlags: 0

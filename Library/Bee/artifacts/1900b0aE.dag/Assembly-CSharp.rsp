@@ -385,6 +385,7 @@
 "Assets/Scripts/UICloser.cs"
 "Assets/Scripts/UIController.cs"
 "Assets/Scripts/Worker.cs"
+"Assets/WorkerManager.cs"
 -langversion:9.0
 
 /deterministic

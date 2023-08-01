@@ -2008,6 +2008,8 @@ MonoBehaviour:
   buildingManager: {fileID: 0}
   noPlaceMaterial: {fileID: 2100000, guid: 6d4c681d5ded10d429140bab73486b5b, type: 2}
   meshRenderer: {fileID: 8761534561182388309}
+  isPlaced: 0
+  value: 50
 --- !u!65 &5924116432701661879
 BoxCollider:
   m_ObjectHideFlags: 0
