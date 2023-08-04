@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PaymentLine : MonoBehaviour
 {
@@ -14,9 +15,13 @@ public class PaymentLine : MonoBehaviour
     public bool cashierAtTill;
     public bool cashierAssigned;
     public Worker currentCashier;
+    public bool playerIsCashier;
+    public GameObject playerTimerCanvas;
+    public Image playerTimerImage;
 
     private void Start()
     {
+        playerIsCashier = false;
         gameController = FindAnyObjectByType<GameController>();
         // Collect all the line points
         foreach (Transform child in transform)
@@ -103,7 +108,18 @@ public class PaymentLine : MonoBehaviour
         {
            if(paymentTimer<=paymentTime)
            {
-            paymentTimer += Time.deltaTime;
+                paymentTimer += Time.deltaTime;
+                if(currentCashier != null)
+                {
+                    currentCashier.GetComponent<Worker>().timerCanvas.SetActive(true);
+                    currentCashier.GetComponent<Worker>().timerImage.fillAmount = paymentTimer/paymentTime;
+                    playerTimerCanvas.SetActive(false);
+                }
+                else if(playerIsCashier)
+                {
+                    playerTimerCanvas.SetActive(true);
+                    playerTimerImage.fillAmount = paymentTimer/paymentTime;
+                }
            }
            else
            {
@@ -111,6 +127,13 @@ public class PaymentLine : MonoBehaviour
             paymentPoint.customer.LeaveNow();
             paymentTimer = 0f;
             paymentPoint.inLine = false;
+            if(currentCashier != null)
+                {
+                    currentCashier.GetComponent<Worker>().timerCanvas.SetActive(false);
+                }
+                else if(playerIsCashier){
+                    playerTimerCanvas.SetActive(false);
+                }
             MoveLine();
            }
         }

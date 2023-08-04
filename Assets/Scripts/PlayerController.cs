@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using static Worker;
 
 public class PlayerController : MonoBehaviour
@@ -35,6 +36,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float minCleanTime;
     [SerializeField] float maxCleanTime;
     float cleanTimer;
+    public Image timerImage;
+    public GameObject timerCanvas;
+    public GameObject bookSpotOne;
+    public GameObject bookPrefabOne;
+    public GameObject bookSpotTwo;
+    public GameObject bookPrefabTwo;
+    public GameObject bookSpotThree;
+    public GameObject bookPrefabThree; 
 
 
     void Start()
@@ -73,6 +82,8 @@ public class PlayerController : MonoBehaviour
                     if(workingAtCheckout == true)
                     {
                         workingAtCheckout = false;
+                        timerCanvas.SetActive(false);
+                        cashRegister.playerIsCashier = false;
                         cashRegister.cashierAssigned = false;
                         cashRegister.cashierAtTill = false;
                         atCheckout = false; 
@@ -110,6 +121,8 @@ public class PlayerController : MonoBehaviour
                     if (workingAtCheckout == true)
                     {
                         workingAtCheckout = false;
+                        timerCanvas.SetActive(false);
+                        cashRegister.playerIsCashier = false;
                         cashRegister.cashierAssigned = false;
                         cashRegister.cashierAtTill = false;
                         atCheckout = false;
@@ -130,6 +143,8 @@ public class PlayerController : MonoBehaviour
                     if (workingAtCheckout == true)
                     {
                         workingAtCheckout = false;
+                        timerCanvas.SetActive(false);
+                        cashRegister.playerIsCashier = false;
                         cashRegister.cashierAssigned = false;
                         cashRegister.cashierAtTill = false;
                         atCheckout = false;
@@ -150,6 +165,8 @@ public class PlayerController : MonoBehaviour
                     if (workingAtCheckout == true)
                     {
                         workingAtCheckout = false;
+                        timerCanvas.SetActive(false);
+                        cashRegister.playerIsCashier = false;
                         cashRegister.cashierAssigned = false;
                         cashRegister.cashierAtTill = false;
                         atCheckout = false;
@@ -171,6 +188,8 @@ public class PlayerController : MonoBehaviour
                     if (workingAtCheckout == true)
                     {
                         workingAtCheckout = false;
+                        timerCanvas.SetActive(false);
+                        cashRegister.playerIsCashier = false;
                         cashRegister.cashierAssigned = false;
                         cashRegister.cashierAtTill = false;
                         atCheckout = false;
@@ -190,6 +209,8 @@ public class PlayerController : MonoBehaviour
                         if (workingAtCheckout == true)
                         {
                             workingAtCheckout = false;
+                            timerCanvas.SetActive(false);
+                            cashRegister.playerIsCashier = false;
                             cashRegister.cashierAssigned = false;
                             cashRegister.cashierAtTill = false;
                             atCheckout = false;
@@ -253,9 +274,11 @@ public class PlayerController : MonoBehaviour
     public void WorkAtCheckoutDesk()
     {
         workingAtCheckout = true;
+        cashRegister.playerIsCashier = true;
         if(cashRegister.currentCashier != null)
         {
             cashRegister.currentCashier.currentState = Worker.WorkerState.Idle;
+            cashRegister.currentCashier.GetComponent<Worker>().timerCanvas.SetActive(false);
             cashRegister.currentCashier = null;
         }
         cashRegister.cashierAtTill = false;
@@ -336,6 +359,7 @@ public class PlayerController : MonoBehaviour
                 } 
                 workingAtBookshelf = false;
                 availableBookSpot = null;
+                UpdateHeldBooks();
                 // ... do something with the available BookSpot ...
             }
             else if (availableBookSpot == null)
@@ -357,8 +381,8 @@ public class PlayerController : MonoBehaviour
             Destroy(targetPickupObject.gameObject);
             if(carriedBookNames.Count>0){hasbook = true;}
             gameController.books--;
-            
             takingABook = false;
+            UpdateHeldBooks();
         }
         /*
         Check if target book is not null
@@ -386,6 +410,9 @@ public class PlayerController : MonoBehaviour
                 storage.GetComponent<Storage>().BooksOnTop();
                 hasbook = true;
                 gameController.RestockShelves();
+                workingAtStorage = false;
+                navMeshAgent.SetDestination(this.transform.position);
+                UpdateHeldBooks();
             }
             /*  @@@ bellow is for putting books back into storage, need a different clickable to do that (Maybe Button in Storage)
             else if (carriedBookNames.Count >= howManyBooksCanCarry)
@@ -398,8 +425,7 @@ public class PlayerController : MonoBehaviour
                 hasbook = false;
             }
             */
-            workingAtStorage = false;
-            navMeshAgent.SetDestination(this.transform.position);
+           
         }
     }
 
@@ -408,7 +434,7 @@ public class PlayerController : MonoBehaviour
         Vector3 lookPos = destination - transform.position;
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);  
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f); 
     }
 
     public void AddBookToList(string bookName, int bookPrice, GameObject bookPrefab)
@@ -416,5 +442,33 @@ public class PlayerController : MonoBehaviour
         carriedBookNames.Add(bookName);
         carriedBookPrices.Add(bookPrice);
         carriedBookPrefabs.Add(bookPrefab);
+    }
+
+    public void UpdateHeldBooks()
+    {
+        if(bookPrefabOne != null)
+        {
+            Destroy(bookSpotOne.transform.GetChild(0).gameObject);
+        }
+        if(bookPrefabTwo != null)
+        {
+            Destroy(bookSpotTwo.transform.GetChild(0).gameObject);
+        }
+        if(bookPrefabThree != null)
+        {
+            Destroy(bookSpotThree.transform.GetChild(0).gameObject);
+        }
+        if(carriedBookPrefabs.Count >=1)
+        {
+           bookPrefabOne = Instantiate(carriedBookPrefabs[0], bookSpotOne.transform);
+        }
+        if(carriedBookPrefabs.Count >=2)
+        {
+            bookPrefabTwo = Instantiate(carriedBookPrefabs[1], bookSpotTwo.transform);
+        }
+        if(carriedBookPrefabs.Count >=3)
+        {
+            bookPrefabThree = Instantiate(carriedBookPrefabs[2], bookSpotThree.transform);
+        }
     }
 }

@@ -47,6 +47,7 @@ public class BuildingManager : MonoBehaviour
     {
         //pendingObj = Instantiate(objects[index], pos, transform.Rotation);
         pendingObj = Instantiate(objects[index]);
+        ShowCancelButton();
     }
 
   void RotateObject()
@@ -100,6 +101,7 @@ public class BuildingManager : MonoBehaviour
                             placedItemRotation = hit.collider.transform.rotation;
                             pendingObj = hit.collider.gameObject;
                             sellButton.SetActive(true);
+                            ShowCancelButton();
                             //if click on object while in build mode, if it has checkplacement script
                             // it picks it up and makes i tthe current placement object
                         }
@@ -110,6 +112,7 @@ public class BuildingManager : MonoBehaviour
     
     void PlaceObject()
     {
+        cancelButton.SetActive(false);
         if(alreadyPlacedItem == false)
         {
             if(gameController.currentGold >= pendingObj.GetComponent<CheckPlacement>().value)
@@ -151,6 +154,7 @@ public class BuildingManager : MonoBehaviour
         
     public void CloseBuildMode()
     {
+        cancelButton.SetActive(false);
         if(alreadyPlacedItem == true)
         {
             pendingObj.transform.position = placedItemTransform;
@@ -174,5 +178,9 @@ public class BuildingManager : MonoBehaviour
             Destroy(pendingObj);
             sellButton.SetActive(false);
         }
+    }
+    public void ShowCancelButton()
+    {
+        cancelButton.SetActive(true);
     }
 }

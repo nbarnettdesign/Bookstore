@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\BookCreationPage.cs" />
      <Compile Include="Assets\Scripts\Bookshelf.cs" />
      <Compile Include="Assets\Scripts\IsometricCameraController.cs" />
+     <Compile Include="Assets\Scripts\Billboarding.cs" />
      <Compile Include="Assets\Scripts\Store.cs" />
      <Compile Include="Assets\Scripts\BookUI.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

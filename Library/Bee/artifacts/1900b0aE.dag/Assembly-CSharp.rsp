@@ -362,6 +362,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/BAKUP_PLAYERCONTROLLER.cs"
+"Assets/Scripts/Billboarding.cs"
 "Assets/Scripts/BookCreation.cs"
 "Assets/Scripts/BookCreationPage.cs"
 "Assets/Scripts/Bookshelf.cs"

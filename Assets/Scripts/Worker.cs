@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Worker : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class Worker : MonoBehaviour
     private List<Decorations> decorationToClean;
     private Decorations cleanTarget;
     private UIController uiController;
+    public Image timerImage;
+    public GameObject timerCanvas;
+    public GameObject heldBookSpot;
+    public GameObject heldBookPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +56,7 @@ public class Worker : MonoBehaviour
         currentState = WorkerState.Idle;
         workTimer =0f;
         goingToRegister = false;
+        timerCanvas.SetActive(false);
 
         decorationToClean = new List<Decorations>();
     
@@ -128,11 +134,14 @@ public class Worker : MonoBehaviour
 
                     if(workTimer<=workTime)
                     {
+                        timerCanvas.SetActive(true);
                         workTimer+=Time.deltaTime;
+                        timerImage.fillAmount = workTimer/workTime;
                     }
                     else{
                         if(storage.GetComponent<Storage>().bookList.Count > 0 )
                         {
+                            timerCanvas.SetActive(false);
                             carriedBookName = storage.GetComponent<Storage>().bookList[0].name;
                             carriedBookPrice = storage.GetComponent<Storage>().bookList[0].value;
                             carriedBookPrefab = storage.GetComponent<Storage>().bookList[0].prefab;
@@ -141,6 +150,7 @@ public class Worker : MonoBehaviour
                             uiController.DeleteStorageList();
                             storage.GetComponent<Storage>().PopulateBookList();
                             storage.GetComponent<Storage>().BooksOnTop();
+                            UpdateHeldBook();
                         if(carriedBookPrefab != null)
                         {
                             currentState = WorkerState.StockShelves;
@@ -182,10 +192,13 @@ public class Worker : MonoBehaviour
 
                             if(workTimer<=workTime)
                             {
+                                timerCanvas.SetActive(true);
                                 workTimer+=Time.deltaTime;
+                                timerImage.fillAmount = workTimer/workTime;
                             }
                             else
                             {
+                                timerCanvas.SetActive(false);
                                 GameObject newBook = Instantiate(carriedBookPrefab, bookSpotFree.transform.position, Quaternion.identity, bookSpotFree.transform);
                                 newBook.GetComponent<PickUpObject>().prefab = carriedBookPrefab;
                                 newBook.transform.localRotation = Quaternion.Euler(0, 90, 0);
@@ -199,6 +212,7 @@ public class Worker : MonoBehaviour
                                 bookSpotFree.isAvailable = false;
                                 gameController.books++;
                                 bookSpotFree = null;
+                                UpdateHeldBook();
                                 //availableBookSpots.RemoveAt(randomIndex);
                                 
                                 //currentState = WorkerState.Idle;
@@ -242,8 +256,11 @@ public class Worker : MonoBehaviour
                         FaceTarget(cleanTarget.transform.position);
                         if(workTimer<=workTime)
                         {
+                            timerCanvas.SetActive(true);
                             workTimer+=Time.deltaTime;
+                            timerImage.fillAmount = workTimer/workTime;
                         } else{
+                            timerCanvas.SetActive(false);
                             workTimer = 0f;
                             currentState = WorkerState.Idle;
                             int spiderwebAmount = store.SpiderwebMath();
@@ -269,5 +286,17 @@ public class Worker : MonoBehaviour
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);  
+    }
+
+    public void UpdateHeldBook()
+    {
+        if(heldBookPrefab != null)
+        {
+            Destroy(heldBookSpot.transform.GetChild(0).gameObject);
+        }
+        if(carriedBookPrefab != null)
+        {
+            heldBookPrefab = Instantiate(carriedBookPrefab, heldBookSpot.transform);
+        }
     }
 }

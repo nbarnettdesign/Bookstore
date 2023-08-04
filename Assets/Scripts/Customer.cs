@@ -36,6 +36,7 @@ public class Customer : MonoBehaviour
     private Vector3 exitPoint;
     private bool hasExited = false;
     public int pickedUpItemPrice;
+    public GameObject pickedUpItemPrefab;
     private bool hasItem;
     public int maxPickupChecks = 5;
     public int minPickupChecks = 1;
@@ -44,6 +45,8 @@ public class Customer : MonoBehaviour
     private PaymentLine frontDesk;
     public GameController gameController;
     public LinePoint availablelinePoint;
+    public GameObject heldBookSpot;
+    public GameObject heldBookPrefab;
 
     void Start()
     {
@@ -159,11 +162,13 @@ public class Customer : MonoBehaviour
                     {
                         targetPickupObject.SetIsBeingCarried(false);
                         pickedUpItemPrice = targetPickupObject.price;
+                        pickedUpItemPrefab = targetPickupObject.prefab;
                         Destroy(targetPickupObject.gameObject);
                         gameController.books--;
                         //Debug.Log("SET STATE TO: LINEUP");
                         currentState = CustomerState.LineUp;
                         hasItem = true;
+                        UpdateHeldBook();
                     } else currentState = CustomerState.Idle;
                         
                     
@@ -245,5 +250,16 @@ private void FaceTarget(Vector3 destination)
     Quaternion rotation = Quaternion.LookRotation(lookPos);
     transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1f);  
 }
+public void UpdateHeldBook()
+    {
+        if(heldBookPrefab != null)
+        {
+            Destroy(heldBookSpot.transform.GetChild(0).gameObject);
+        }
+        if(pickedUpItemPrefab != null)
+        {
+            heldBookPrefab = Instantiate(pickedUpItemPrefab, heldBookSpot.transform);
+        }
+    }
 
 }

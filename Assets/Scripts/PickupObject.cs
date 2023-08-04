@@ -21,14 +21,22 @@ public class PickUpObject : MonoBehaviour
 
 private void Start() {
     bookSpot = GetComponentInParent<BookSpot>();
-    bookSpot.currentBook = this;
-    bookSpot.isAvailable = false;
+    if(bookSpot == null)
+    {
+        Destroy(this);
+        return;
+    }
+    if(bookSpot != null)
+    {
+        bookSpot.currentBook = this;
+        bookSpot.isAvailable = false;
+    }
         isPickedUp = false;
     uiController = FindObjectOfType<UIController>();
     
     if(bookName=="")
     {
-        bookName = "Solo Leveling Chapter " + Random.Range( 1,500);
+        bookName = "Swords and Magic " + Random.Range( 1,500);
     }
     bookSpot.bookName = bookName;
     bookSpot.price = price;
